@@ -67,11 +67,12 @@ nav a:hover{ color: var(--accent); }
 }
 
 .two-col{
-  display:grid;
-  grid-template-columns: 140px 1fr;
+  display: grid;
+  grid-template-columns: 220px 1fr;
   gap: 18px;
   align-items: start;
 }
+
 .avatar{
   width: 180px;
   height: 180px;
@@ -344,5 +345,6 @@ a {
 a:hover {
   color: var(--accent);
 }
+
 
 
