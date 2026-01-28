@@ -1,10 +1,11 @@
 :root{
-  --text:#111;
-  --muted:#555;
-  --line:#eaeaea;
-  --bg:#fff;
-  --accent:#2b6cb0;
+  --text: #0a0a0a;      /* main text – very dark */
+  --muted: #2f2f2f;    /* secondary text – still dark, not gray */
+  --line: #e6e6e6;
+  --bg: #ffffff;
+  --accent: #1f4fd8;
 }
+
 
 *{box-sizing:border-box}
 body{
@@ -343,4 +344,5 @@ a {
 a:hover {
   color: var(--accent);
 }
+
 
