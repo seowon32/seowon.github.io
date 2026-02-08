@@ -3,86 +3,174 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ClearScope Medical — Laparoscopic Simulator | Seowon Jeong</title>
+  <title>ClearScope Surgical Simulator | Seowon Jeong</title>
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
   <div class="container">
 
-<nav>
-  <a href="../index.html">Home</a>
-  <a href="../resume.html">Resume</a>
-  <a href="../projects.html">Projects</a>
-</nav>
+    <!-- NAV (note ../ because this page is inside /portfolio/) -->
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../resume.html">Resume</a>
+      <a href="../projects.html">Projects</a>
+    </nav>
 
-
+    <!-- HERO -->
     <div class="project-hero">
-      <h1>ClearScope Medical — Laparoscopic Training Simulator</h1>
-      <div class="subtitle">Design & Manufacturing Lead · Austin, TX · Jan 2025 – May 2025</div>
+      <h1>ClearScope Surgical Simulator Development</h1>
+      <div class="subtitle">Design & Manufacturing Lead · UT Austin · Jan 2025 – May 2025</div>
 
-      <!-- Optional NDA/Disclosure box (matches the Apple page vibe) -->
       <div class="notice">
         <strong>Disclosure:</strong> This page includes only non-proprietary, public, or personally created content.
       </div>
 
-      <!-- Hero media: image OR video -->
+      <!-- HERO IMAGE (replace with your best photo/render) -->
       <div class="media" style="margin-top:14px;">
-        <img src="../assets/clearscope-hero.jpg" alt="Laparoscopic simulator prototype" />
+        <img src="../assets/clearscope-hero.jpg" alt="ClearScope simulator prototype (hero image)" />
       </div>
 
-      <!-- If you want a video instead, replace the image block above with:
-      <div class="media" style="margin-top:14px;">
-        <iframe class="video" src="https://www.youtube.com/embed/VIDEO_ID" title="Project video" allowfullscreen></iframe>
+      <!-- Optional quick metrics -->
+      <div class="section" style="border-top:none; padding-top:16px;">
+        <div class="tags">
+          <span class="tag" style="pointer-events:none;">Medical device simulation</span>
+          <span class="tag" style="pointer-events:none;">Prototyping</span>
+          <span class="tag" style="pointer-events:none;">DFM / Cost</span>
+          <span class="tag" style="pointer-events:none;">User-centered design</span>
+        </div>
       </div>
-      -->
     </div>
 
-    <section class="section">
+    <!-- OVERVIEW -->
+    <section class="section reveal" id="overview">
       <h2>Overview</h2>
       <p class="small">
-        Engineered and prototyped a human-like torso simulator for laparoscopic tool training, focusing on
-        realistic ergonomics, usability, and manufacturability.
+        Developed a realistic laparoscopic surgical simulation platform for ClearCam to demonstrate and validate the
+        performance of the ClearScope laparoscopic lens-cleaning device. The project delivered two simulators:
+        a full-scale human torso simulator and a portable demonstration box to enable controlled debris-based testing
+        and realistic visualization conditions.
       </p>
     </section>
 
-    <section class="section">
-      <h2>What I Did</h2>
+    <!-- PROBLEM -->
+    <section class="section reveal" id="problem">
+      <h2>Problem</h2>
+      <p class="small">
+        Existing laparoscopic training simulators do not replicate realistic internal debris conditions and often miss key
+        surgical constraints such as trocar insertion, a dark interior environment for visualization, or cost-effective build
+        methods. The sponsor needed a reusable platform that could reliably demonstrate ClearScope effectiveness in a
+        realistic surgical-like environment.
+      </p>
+    </section>
+
+    <!-- OBJECTIVES -->
+    <section class="section reveal" id="objectives">
+      <h2>Engineering Objectives</h2>
       <ul>
-        <li>Led CAD design and prototyping iterations with lean material selection.</li>
-        <li>Built and refined physical prototypes through additive manufacturing and fabrication.</li>
-        <li>Ran iterative user testing and integrated feedback into design revisions.</li>
+        <li>Replicate human torso size/geometry with internal cavity access</li>
+        <li>Support trocar insertion points (including triangular placement patterns)</li>
+        <li>Enable tissue-like cutting behavior with replaceable layers</li>
+        <li>Allow controlled internal debris application for repeatable demonstrations</li>
+        <li>Be easy to assemble, clean, and reuse</li>
+        <li>Deliver both a full-scale simulator and a portable demonstration box</li>
       </ul>
     </section>
 
-    <section class="section">
-      <h2>Results</h2>
+    <!-- CONTRIBUTIONS -->
+    <section class="section reveal" id="contributions">
+      <h2>My Contributions</h2>
+
+      <h3 style="margin-top:14px;">Mechanical Design & CAD</h3>
       <ul>
-        <li>Delivered at ~10% of commercial market cost.</li>
-        <li>Achieved 90%+ satisfaction level through iterative testing and refinement.</li>
+        <li>Led CAD development of the simulator housing and internal structures for modularity and repeatable testing</li>
+        <li>Designed incision and access geometry to support laparoscopic tool and trocar compatibility</li>
+        <li>Optimized parts for manufacturability and assembly</li>
+      </ul>
+
+      <h3 style="margin-top:14px;">Prototyping & Manufacturing</h3>
+      <ul>
+        <li>Integrated additive manufacturing with molding workflows to produce structural components and tissue-like layers</li>
+        <li>Developed tissue-mimicking components using silicone/ballistic gel approaches for realistic interaction</li>
+        <li>Designed fastening/reinforcement mechanisms (e.g., mesh + fasteners) to secure replaceable tissue layers</li>
+      </ul>
+
+      <h3 style="margin-top:14px;">Stakeholder-Driven Iteration</h3>
+      <ul>
+        <li>Translated sponsor and advisor requirements into engineering specifications</li>
+        <li>Conducted iterative prototyping and incorporated feedback to improve realism, usability, and maintainability</li>
+        <li>Balanced performance, cost, portability, and ease of cleaning for repeated demonstrations</li>
       </ul>
     </section>
 
-    <section class="section">
-      <h2>Top Skills Utilized</h2>
-      <div class="skills-grid">
-        <div class="skill-pill">Product Design</div>
-        <div class="skill-pill">Prototyping</div>
-        <div class="skill-pill">Additive Manufacturing</div>
-        <div class="skill-pill">DFM / Cost</div>
+    <!-- APPROACH -->
+    <section class="section reveal" id="approach">
+      <h2>Engineering Approach</h2>
+      <ol>
+        <li>Reviewed existing laparoscopic trainer solutions and identified gaps for debris-based demonstration</li>
+        <li>Converted stakeholder needs into measurable requirements and acceptability criteria</li>
+        <li>Generated concepts and selected designs using structured evaluation</li>
+        <li>Built CAD models and prototypes; iterated using material testing and usability feedback</li>
+        <li>Validated durability, portability, realism, and sponsor usability expectations</li>
+      </ol>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="section reveal" id="results">
+      <h2>Results & Impact</h2>
+      <ul>
+        <li>Delivered a full-scale torso simulator to create a realistic surgical-like environment for controlled debris testing</li>
+        <li>Designed a portable demonstration box emphasizing collapsibility and transport for sponsor demos</li>
+        <li>Improved the sponsor’s ability to validate device performance and communicate effectiveness to medical professionals</li>
+      </ul>
+
+      <div class="card" style="margin-top:14px;">
+        <strong>Tip:</strong> If you have quantitative outcomes (cost vs commercial trainers, user satisfaction, setup time,
+        durability cycles), add them here—numbers make this project stand out.
       </div>
     </section>
 
-    <section class="section">
-      <h2>Gallery</h2>
-      <div class="media"><img src="../assets/clearscope-1.jpg" alt="CAD render or prototype photo" /></div>
-      <div class="media" style="margin-top:14px;"><img src="../assets/clearscope-2.jpg" alt="Testing setup or design detail" /></div>
+    <!-- TOP SKILLS -->
+    <section class="section reveal" id="skills">
+      <h2>Top Skills Utilized</h2>
+      <div class="skills-grid">
+        <div class="skill-pill">Product Design</div>
+        <div class="skill-pill">Mechanical CAD</div>
+        <div class="skill-pill">Rapid Prototyping</div>
+        <div class="skill-pill">Additive Manufacturing</div>
+        <div class="skill-pill">Design for Manufacturability</div>
+        <div class="skill-pill">User-Centered Engineering</div>
+      </div>
     </section>
 
-    <section class="section">
+    <!-- GALLERY -->
+    <section class="section reveal" id="gallery">
+      <h2>Gallery</h2>
+
+      <!-- Replace these images with your actual photos/renders -->
+      <div class="media">
+        <img src="../assets/clearscope-1.jpg" alt="CAD render or assembled simulator overview" />
+      </div>
+
+      <div class="media" style="margin-top:14px;">
+        <img src="../assets/clearscope-2.jpg" alt="Tissue-mimicking layer, internal components, or testing setup" />
+      </div>
+
+      <div class="media" style="margin-top:14px;">
+        <img src="../assets/clearscope-3.jpg" alt="Portable demo box concept or final build" />
+      </div>
+
+      <p class="small" style="margin-top:12px;">
+        (Optional) Add short captions under each image to explain what the viewer is seeing: iteration changes,
+        material selection, assembly method, or testing conditions.
+      </p>
+    </section>
+
+    <!-- OTHER PROJECTS -->
+    <section class="section reveal">
       <h2>Other Projects</h2>
       <div class="other-grid">
         <a class="other-card" href="battery.html">
-          <img src="../assets/battery-thumb.jpg" alt="Battery project thumbnail" />
+          <img src="../assets/battery-thumb.jpg" alt="Battery defect detection thumbnail" />
           <div class="pad">
             <p class="title">Battery Defect Detection</p>
             <p class="meta">Python · X-ray analysis · Control system</p>
@@ -90,10 +178,10 @@
         </a>
 
         <a class="other-card" href="infineon.html">
-          <img src="../assets/infineon-thumb.jpg" alt="Infineon thumbnail" />
+          <img src="../assets/infineon-thumb.jpg" alt="Infineon DOE thumbnail" />
           <div class="pad">
             <p class="title">Infineon Process DOE</p>
-            <p class="meta">DOE · Yield +10% · Efficiency +120%</p>
+            <p class="meta">DOE · Yield improvement · Efficiency</p>
           </div>
         </a>
 
@@ -107,6 +195,7 @@
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
       <div>LinkedIn: <a href="https://www.linkedin.com/in/sj320/" target="_blank" rel="noreferrer">linkedin.com/in/sj320</a></div>
       <div>Email: <a href="mailto:Seowonj320@gmail.com">Seowonj320@gmail.com</a></div>
@@ -114,5 +203,24 @@
     </footer>
 
   </div>
+
+  <!-- Subtle scroll animation (same behavior as your homepage) -->
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      reveals.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const revealPoint = 120;
+        if (elementTop < windowHeight - revealPoint) {
+          el.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
 </body>
 </html>
