@@ -3,13 +3,70 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ClearScope Surgical Simulator | Seowon Jeong</title>
+  <title>ClearCam Surgical Demo Platforms | Seowon Jeong</title>
+  <meta name="description" content="Mechanical design & manufacturing case study: full-scale laparoscopic torso simulator + portable demonstration box for ClearScope lens-cleaning demos." />
+
+  <!-- This file lives in /portfolio -->
   <link rel="stylesheet" href="../style.css" />
+
+  <!-- Page-only helpers -->
+  <style>
+    .proj-layout{ display:grid; grid-template-columns: 260px 1fr; gap: 20px; align-items:start; }
+    @media (max-width: 980px){ .proj-layout{ grid-template-columns: 1fr; } .toc{ position: static; } }
+
+    .toc{
+      position: sticky; top: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: #fff;
+    }
+    .toc .label{ font-weight: 900; margin-bottom: 10px; }
+    .toc a{
+      display:block; padding: 8px 8px; border-radius: 10px;
+      color: var(--muted); font-weight: 800;
+    }
+    .toc a:hover{ background:#fafafa; color: var(--accent); }
+
+    .kpi{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 980px){ .kpi{ grid-template-columns: 1fr; } }
+
+    .kpi .box{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      background:#fff;
+    }
+    .kpi .num{ font-weight: 900; font-size: 18px; margin-bottom: 2px; }
+    .kpi .cap{ color: var(--muted); font-size: 13px; }
+
+    .callout{
+      border: 1px solid var(--line);
+      background:#fafafa;
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      margin-top: 14px;
+    }
+
+    .split{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 980px){ .split{ grid-template-columns: 1fr; } }
+
+    .bullets{ margin: 10px 0 0; padding-left: 18px; }
+    .bullets li{ margin: 6px 0; }
+
+    .caption{ color: var(--muted); font-size: 13px; margin-top: 8px; }
+  </style>
 </head>
+
 <body>
   <div class="container">
 
-    <!-- NAV (note ../ because this page is inside /portfolio/) -->
+    <!-- NAV -->
     <nav>
       <a href="../index.html">Home</a>
       <a href="../resume.html">Resume</a>
@@ -18,193 +75,373 @@
 
     <!-- HERO -->
     <div class="project-hero">
-      <h1>ClearScope Surgical Simulator Development</h1>
-      <div class="subtitle">Design & Manufacturing Lead · UT Austin · Jan 2025 – May 2025</div>
+      <h1>ClearCam — Laparoscopic Demo Platforms</h1>
+      <div class="subtitle">Full-scale torso simulator (R&amp;D) + portable demo box (marketing) designed for realistic lens contamination</div>
 
       <div class="notice">
-        <strong>Disclosure:</strong> This page includes only non-proprietary, public, or personally created content.
+        <strong>Focus:</strong> Design for manufacturability, modular assembly, realistic testing environment, and fast setup for product demos.
       </div>
 
-      <!-- HERO IMAGE (replace with your best photo/render) -->
       <div class="media" style="margin-top:14px;">
-        <img src="../assets/clearscope-hero.jpg" alt="ClearScope simulator prototype (hero image)" />
+        <img src="../assets/clearscope-hero.jpg" alt="ClearCam demo platform hero image" />
       </div>
 
-      <!-- Optional quick metrics -->
-      <div class="section" style="border-top:none; padding-top:16px;">
-        <div class="tags">
-          <span class="tag" style="pointer-events:none;">Medical device simulation</span>
-          <span class="tag" style="pointer-events:none;">Prototyping</span>
-          <span class="tag" style="pointer-events:none;">DFM / Cost</span>
-          <span class="tag" style="pointer-events:none;">User-centered design</span>
+      <!-- TL;DR + KPI -->
+      <section class="section" style="border-top:none; padding-top:16px;">
+        <div class="split">
+          <div class="card">
+            <strong>TL;DR (for hiring managers)</strong>
+            <ul class="bullets">
+              <li>Built a realistic laparoscopic environment to demonstrate ClearScope’s lens-cleaning capability</li>
+              <li>Designed a reusable torso simulator (modular, dark interior, trocar-compatible, debris-capable)</li>
+              <li>Created a portable demo box concept for fast setup and customer-facing demonstrations</li>
+              <li>Validated usability with durability, portability, and qualitative performance testing plans</li>
+            </ul>
+          </div>
+          <div class="card">
+            <strong>Why this matters</strong>
+            <p class="small" style="margin-top:10px;">
+              Many training platforms fail to replicate real lens contamination, which blocks product validation and marketing.
+              This project delivered a practical, low-cost way to reproduce “debris events” and quickly demonstrate cleaning performance.
+            </p>
+          </div>
         </div>
-      </div>
+
+        <div class="kpi">
+          <div class="box">
+            <div class="num">Torso: 50×30×15 cm</div>
+            <div class="cap">Designed under ~5 kg target for portability and use</div>
+          </div>
+          <div class="box">
+            <div class="num">Trocar-compatible</div>
+            <div class="cap">Supports multi-incision “triangle” access pattern</div>
+          </div>
+          <div class="box">
+            <div class="num">Debris simulation</div>
+            <div class="cap">Controlled lens contamination with a wipe-clean target</div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>Deliverables:</strong> (1) Functional torso simulator prototype for R&amp;D demos and validation,
+          (2) Technical drawing/CAD design for a portable demo box for marketing use.
+        </div>
+      </section>
     </div>
 
-    <!-- OVERVIEW -->
-    <section class="section reveal" id="overview">
-      <h2>Overview</h2>
-      <p class="small">
-        Developed a realistic laparoscopic surgical simulation platform for ClearCam to demonstrate and validate the
-        performance of the ClearScope laparoscopic lens-cleaning device. The project delivered two simulators:
-        a full-scale human torso simulator and a portable demonstration box to enable controlled debris-based testing
-        and realistic visualization conditions.
-      </p>
-    </section>
+    <!-- MAIN -->
+    <div class="proj-layout">
 
-    <!-- PROBLEM -->
-    <section class="section reveal" id="problem">
-      <h2>Problem</h2>
-      <p class="small">
-        Existing laparoscopic training simulators do not replicate realistic internal debris conditions and often miss key
-        surgical constraints such as trocar insertion, a dark interior environment for visualization, or cost-effective build
-        methods. The sponsor needed a reusable platform that could reliably demonstrate ClearScope effectiveness in a
-        realistic surgical-like environment.
-      </p>
-    </section>
+      <!-- TOC -->
+      <aside class="toc">
+        <div class="label">On this page</div>
+        <a href="#overview">Overview</a>
+        <a href="#problem">Problem & Requirements</a>
+        <a href="#solutions">Two Solutions</a>
+        <a href="#torso">Torso Simulator Design</a>
+        <a href="#portable">Portable Demo Box Design</a>
+        <a href="#testing">Testing & Validation</a>
+        <a href="#dfm">DFM / Manufacturing Notes</a>
+        <a href="#skills">Skills Highlight</a>
+        <a href="#links">Report / Links</a>
+      </aside>
 
-    <!-- OBJECTIVES -->
-    <section class="section reveal" id="objectives">
-      <h2>Engineering Objectives</h2>
-      <ul>
-        <li>Replicate human torso size/geometry with internal cavity access</li>
-        <li>Support trocar insertion points (including triangular placement patterns)</li>
-        <li>Enable tissue-like cutting behavior with replaceable layers</li>
-        <li>Allow controlled internal debris application for repeatable demonstrations</li>
-        <li>Be easy to assemble, clean, and reuse</li>
-        <li>Deliver both a full-scale simulator and a portable demonstration box</li>
-      </ul>
-    </section>
+      <main>
 
-    <!-- CONTRIBUTIONS -->
-    <section class="section reveal" id="contributions">
-      <h2>My Contributions</h2>
+        <!-- OVERVIEW -->
+        <section class="section reveal" id="overview">
+          <h2>Overview</h2>
+          <p class="small">
+            ClearCam’s ClearScope is a laparoscopic lens-cleaning device, but traditional simulators don’t realistically reproduce
+            debris events (thin films of blood/fat/debris on the camera). Our goal was to create a realistic and reusable
+            demonstration environment for both internal testing and customer-facing demos. :contentReference[oaicite:3]{index=3}
+          </p>
 
-      <h3 style="margin-top:14px;">Mechanical Design & CAD</h3>
-      <ul>
-        <li>Led CAD development of the simulator housing and internal structures for modularity and repeatable testing</li>
-        <li>Designed incision and access geometry to support laparoscopic tool and trocar compatibility</li>
-        <li>Optimized parts for manufacturability and assembly</li>
-      </ul>
-
-      <h3 style="margin-top:14px;">Prototyping & Manufacturing</h3>
-      <ul>
-        <li>Integrated additive manufacturing with molding workflows to produce structural components and tissue-like layers</li>
-        <li>Developed tissue-mimicking components using silicone/ballistic gel approaches for realistic interaction</li>
-        <li>Designed fastening/reinforcement mechanisms (e.g., mesh + fasteners) to secure replaceable tissue layers</li>
-      </ul>
-
-      <h3 style="margin-top:14px;">Stakeholder-Driven Iteration</h3>
-      <ul>
-        <li>Translated sponsor and advisor requirements into engineering specifications</li>
-        <li>Conducted iterative prototyping and incorporated feedback to improve realism, usability, and maintainability</li>
-        <li>Balanced performance, cost, portability, and ease of cleaning for repeated demonstrations</li>
-      </ul>
-    </section>
-
-    <!-- APPROACH -->
-    <section class="section reveal" id="approach">
-      <h2>Engineering Approach</h2>
-      <ol>
-        <li>Reviewed existing laparoscopic trainer solutions and identified gaps for debris-based demonstration</li>
-        <li>Converted stakeholder needs into measurable requirements and acceptability criteria</li>
-        <li>Generated concepts and selected designs using structured evaluation</li>
-        <li>Built CAD models and prototypes; iterated using material testing and usability feedback</li>
-        <li>Validated durability, portability, realism, and sponsor usability expectations</li>
-      </ol>
-    </section>
-
-    <!-- RESULTS -->
-    <section class="section reveal" id="results">
-      <h2>Results & Impact</h2>
-      <ul>
-        <li>Delivered a full-scale torso simulator to create a realistic surgical-like environment for controlled debris testing</li>
-        <li>Designed a portable demonstration box emphasizing collapsibility and transport for sponsor demos</li>
-        <li>Improved the sponsor’s ability to validate device performance and communicate effectiveness to medical professionals</li>
-      </ul>
-
-      <div class="card" style="margin-top:14px;">
-        <strong>Tip:</strong> If you have quantitative outcomes (cost vs commercial trainers, user satisfaction, setup time,
-        durability cycles), add them here—numbers make this project stand out.
-      </div>
-    </section>
-
-    <!-- TOP SKILLS -->
-    <section class="section reveal" id="skills">
-      <h2>Top Skills Utilized</h2>
-      <div class="skills-grid">
-        <div class="skill-pill">Product Design</div>
-        <div class="skill-pill">Mechanical CAD</div>
-        <div class="skill-pill">Rapid Prototyping</div>
-        <div class="skill-pill">Additive Manufacturing</div>
-        <div class="skill-pill">Design for Manufacturability</div>
-        <div class="skill-pill">User-Centered Engineering</div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section class="section reveal" id="gallery">
-      <h2>Gallery</h2>
-
-      <!-- Replace these images with your actual photos/renders -->
-      <div class="media">
-        <img src="../assets/clearscope-1.jpg" alt="CAD render or assembled simulator overview" />
-      </div>
-
-      <div class="media" style="margin-top:14px;">
-        <img src="../assets/clearscope-2.jpg" alt="Tissue-mimicking layer, internal components, or testing setup" />
-      </div>
-
-      <div class="media" style="margin-top:14px;">
-        <img src="../assets/clearscope-3.jpg" alt="Portable demo box concept or final build" />
-      </div>
-
-      <p class="small" style="margin-top:12px;">
-        (Optional) Add short captions under each image to explain what the viewer is seeing: iteration changes,
-        material selection, assembly method, or testing conditions.
-      </p>
-    </section>
-
-    <!-- OTHER PROJECTS -->
-    <section class="section reveal">
-      <h2>Other Projects</h2>
-      <div class="other-grid">
-        <a class="other-card" href="battery.html">
-          <img src="../assets/battery-thumb.jpg" alt="Battery defect detection thumbnail" />
-          <div class="pad">
-            <p class="title">Battery Defect Detection</p>
-            <p class="meta">Python · X-ray analysis · Control system</p>
+          <div class="split" style="margin-top:14px;">
+            <div class="card">
+              <strong>My contributions</strong>
+              <ul class="bullets">
+                <li>Mechanical design decisions focused on modularity and usability</li>
+                <li>Design-for-manufacturing considerations (print segmentation, joinery, assembly)</li>
+                <li>Testing plan + success metrics for durability, portability, and usability</li>
+              </ul>
+            </div>
+            <div class="card">
+              <strong>Engineering focus</strong>
+              <ul class="bullets">
+                <li>Realistic surgical lighting environment (dark interior)</li>
+                <li>Trocar insertion + repeated “debris event” reproduction</li>
+                <li>Fast access to internal cavity for cleanup and reset</li>
+              </ul>
+            </div>
           </div>
-        </a>
+        </section>
 
-        <a class="other-card" href="infineon.html">
-          <img src="../assets/infineon-thumb.jpg" alt="Infineon DOE thumbnail" />
-          <div class="pad">
-            <p class="title">Infineon Process DOE</p>
-            <p class="meta">DOE · Yield improvement · Efficiency</p>
+        <!-- PROBLEM -->
+        <section class="section reveal" id="problem">
+          <h2>Problem & Requirements</h2>
+
+          <div class="split">
+            <div class="card">
+              <strong>Problem</strong>
+              <p class="small" style="margin-top:10px;">
+                ClearCam’s previous testing setups were not realistic enough for consistent lens contamination demonstrations,
+                limiting both R&amp;D validation and marketing impact. :contentReference[oaicite:4]{index=4}
+              </p>
+            </div>
+            <div class="card">
+              <strong>Key requirements</strong>
+              <ul class="bullets">
+                <li>Torso form factor and cavity access</li>
+                <li>Supports trocar insertion and multiple incision points</li>
+                <li>Reusable tissue layer (replaceable) + internal components removable</li>
+                <li>Debris method that creates a thin film and wipes clean quickly</li>
+                <li>Portability targets for both platforms</li>
+              </ul>
+            </div>
           </div>
-        </a>
 
-        <a class="other-card" href="ecocar.html">
-          <img src="../assets/ecocar-thumb.jpg" alt="EcoCar thumbnail" />
-          <div class="pad">
-            <p class="title">UT EcoCar Rear Redesign</p>
-            <p class="meta">SolidWorks/NX · Wiring reliability</p>
+          <div class="callout">
+            <strong>Targets (examples):</strong> torso dimensions ~50×30×15 cm and ~5 kg, and portable box concept designed for lighter, faster demo setup. :contentReference[oaicite:5]{index=5}
           </div>
-        </a>
-      </div>
-    </section>
+        </section>
 
-    <!-- FOOTER -->
+        <!-- TWO SOLUTIONS -->
+        <section class="section reveal" id="solutions">
+          <h2>Two Solutions</h2>
+
+          <div class="split">
+            <div class="card">
+              <strong>1) Full-scale torso simulator (R&amp;D testing)</strong>
+              <ul class="bullets">
+                <li>Modular torso housing with a sliding door to block external light</li>
+                <li>Internal shelf system for organ placement + controlled debris interaction</li>
+                <li>Tissue-mimicking layer with a mesh hold-down for repeatability</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <strong>2) Portable demo box (marketing)</strong>
+              <ul class="bullets">
+                <li>Compact, collapsible structure for easy transport</li>
+                <li>Pin-joinery and structural pins for quick assembly</li>
+                <li>Single mesh/tissue layer to mimic the demo interaction</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="media" style="margin-top:14px;">
+            <img src="../assets/clearscope-thumb.jpg" alt="Torso simulator and portable demo box overview" />
+          </div>
+          <div class="caption">Add one combined photo (torso + box) or a clean diagram showing the two platforms.</div>
+        </section>
+
+        <!-- TORSO -->
+        <section class="section reveal" id="torso">
+          <h2>Torso Simulator Design</h2>
+
+          <div class="split">
+            <div class="card">
+              <strong>Architecture</strong>
+              <ul class="bullets">
+                <li>Torso-shaped housing with internal cavity</li>
+                <li>Sliding door system to isolate interior lighting</li>
+                <li>Sliding shelf with flexible organ positioning (peg/dowel concept)</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <strong>Tissue & debris interaction</strong>
+              <ul class="bullets">
+                <li>Ballistic gel sheet for a “skin/tissue” layer</li>
+                <li>Mesh support to prevent sag during trocar insertion</li>
+                <li>Debris approach optimized for “thin film” contamination (mustard used as debris in demos)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout">
+            <strong>Manufacturing approach:</strong> housing printed in multiple parts due to printer size limits and assembled (adhesive bonding),
+            with sliding shelf/door mechanisms designed for repeat use. :contentReference[oaicite:6]{index=6}
+          </div>
+
+          <div class="media" style="margin-top:14px;">
+            <img src="../assets/clearscope-torso.jpg" alt="Torso simulator prototype with shelf and door" />
+          </div>
+          <div class="caption">Best image: torso with shelf pulled out (shows modularity and usability).</div>
+        </section>
+
+        <!-- PORTABLE BOX -->
+        <section class="section reveal" id="portable">
+          <h2>Portable Demo Box Design</h2>
+
+          <p class="small">
+            The portable demo box was designed as a customer-facing platform: fast assembly, easy transport,
+            and consistent demonstration of lens contamination + cleaning behavior. The deliverable focused on CAD and technical drawings
+            so it could be manufactured later for sales/marketing use. :contentReference[oaicite:7]{index=7}
+          </p>
+
+          <div class="split">
+            <div class="card">
+              <strong>Key design features</strong>
+              <ul class="bullets">
+                <li>Collapsible panels with pin mechanisms for lock/unlock</li>
+                <li>Vertical structural pins to secure walls + mesh together</li>
+                <li>Single mesh supports tissue layer (consistent demo interaction)</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <strong>Why this works for demos</strong>
+              <ul class="bullets">
+                <li>Portable form factor for conferences and sales meetings</li>
+                <li>Quick setup supports repeated demos in a day</li>
+                <li>Transparent material direction (acrylic) improves audience visibility</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="media" style="margin-top:14px;">
+            <img src="../assets/clearscope-box.jpg" alt="Portable demonstration box CAD or drawing" />
+          </div>
+          <div class="caption">Use your best CAD render or technical drawing image here.</div>
+        </section>
+
+        <!-- TESTING -->
+        <section class="section reveal" id="testing">
+          <h2>Testing & Validation</h2>
+
+          <div class="split">
+            <div class="card">
+              <strong>Durability / joinery integrity</strong>
+              <ul class="bullets">
+                <li>Cycle testing for sliding shelf and sliding door (repeat open/close operations)</li>
+                <li>Pass criteria: no significant deformation after repeated cycles</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <strong>Portability + usability</strong>
+              <ul class="bullets">
+                <li>Measured weight and dimensions vs thresholds</li>
+                <li>Timed setup and teardown workflows for ease of use</li>
+                <li>Qualitative surveys: realism and usability ratings</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout">
+            <strong>Engineering validation approach:</strong> FEA + fatigue modeling were used to confirm low deflection and low stress on the internal shelf under representative loads,
+            plus structured testing plans for debris application and skin replacement. :contentReference[oaicite:8]{index=8}
+          </div>
+
+          <div class="media" style="margin-top:14px;">
+            <img src="../assets/clearscope-cad.jpg" alt="CAD of torso housing, shelf, or analysis visuals" />
+          </div>
+          <div class="caption">Optional: include CAD housing + shelf, or one screenshot of analysis to show engineering rigor.</div>
+        </section>
+
+        <!-- DFM -->
+        <section class="section reveal" id="dfm">
+          <h2>DFM / Manufacturing Notes</h2>
+
+          <div class="split">
+            <div class="card">
+              <strong>What I’d do for production readiness</strong>
+              <ul class="bullets">
+                <li>Convert printed parts to molded/formed panels if scaling (reduce print time)</li>
+                <li>Standardize fasteners and define tolerances for smooth sliding mechanisms</li>
+                <li>Design surfaces to prevent lens scratches (soft liners where needed)</li>
+                <li>Hygiene-first geometry: reduce crevices and improve wipe-down access</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <strong>Key tradeoffs managed</strong>
+              <ul class="bullets">
+                <li>Realism vs portability (torso: realism; box: portability)</li>
+                <li>Structural rigidity vs low weight</li>
+                <li>Debris effectiveness vs easy cleaning/reset between demos</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="section reveal" id="skills">
+          <h2>Skills Highlight</h2>
+          <div class="skills-grid">
+            <div class="skill-pill">Mechanical Design</div>
+            <div class="skill-pill">DFM Thinking</div>
+            <div class="skill-pill">Modular Assembly</div>
+            <div class="skill-pill">CAD + Technical Drawings</div>
+            <div class="skill-pill">Test Planning</div>
+            <div class="skill-pill">FEA / Validation Mindset</div>
+            <div class="skill-pill">User/Stakeholder Requirements</div>
+            <div class="skill-pill">Prototype Iteration</div>
+          </div>
+        </section>
+
+        <!-- LINKS -->
+        <section class="section reveal" id="links">
+          <h2>Report / Links</h2>
+          <div class="card">
+            <strong>Full design report</strong>
+            <p class="small" style="margin-top:10px;">
+              If you want deeper detail (requirements, testing methodology, CAD decisions), download the final report:
+              <a class="btn" href="../assets/clearscope-final-design-report.pdf" style="margin-left:8px;">Download PDF</a>
+            </p>
+            <p class="small" style="margin-top:10px;">
+              Place your report in <code>../assets/</code> as <code>clearscope-final-design-report.pdf</code>, or rename the link.
+            </p>
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="../projects.html">Back to Projects</a>
+            <a class="btn" href="../resume.html">Resume</a>
+          </div>
+        </section>
+
+        <!-- OTHER PROJECTS -->
+        <section class="section reveal">
+          <h2>Other Projects</h2>
+          <div class="other-grid">
+            <a class="other-card" href="./reverse.html">
+              <img src="../assets/reverse.jpg" alt="Toothbrush reverse engineering thumbnail" />
+              <div class="pad">
+                <div class="title">Electric Toothbrush Reverse Engineering</div>
+                <p class="meta">VOC → Requirements → Prototype + DOE</p>
+              </div>
+            </a>
+
+            <a class="other-card" href="./battlebot.html">
+              <img src="../assets/battle.jpg" alt="Battle bot thumbnail" />
+              <div class="pad">
+                <div class="title">Battle Bot</div>
+                <p class="meta">System integration · DFMA · Validation</p>
+              </div>
+            </a>
+
+            <a class="other-card" href="./racing.html">
+              <img src="../assets/racing-thumb.jpg" alt="RC car thumbnail" />
+              <div class="pad">
+                <div class="title">Racing RC Car</div>
+                <p class="meta">Powertrain · Testing · DFM</p>
+              </div>
+            </a>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
     <footer>
-      <div>LinkedIn: <a href="https://www.linkedin.com/in/sj320/" target="_blank" rel="noreferrer">linkedin.com/in/sj320</a></div>
-      <div>Email: <a href="mailto:Seowonj320@gmail.com">Seowonj320@gmail.com</a></div>
-      <div style="margin-top:8px;">© 2026 Seowon Jeong</div>
+      <div>© 2026 Seowon Jeong</div>
     </footer>
 
   </div>
 
-  <!-- Subtle scroll animation (same behavior as your homepage) -->
+  <!-- Scroll reveal -->
   <script>
     const reveals = document.querySelectorAll('.reveal');
 
@@ -213,9 +450,7 @@
       reveals.forEach(el => {
         const elementTop = el.getBoundingClientRect().top;
         const revealPoint = 120;
-        if (elementTop < windowHeight - revealPoint) {
-          el.classList.add('active');
-        }
+        if (elementTop < windowHeight - revealPoint) el.classList.add('active');
       });
     };
 

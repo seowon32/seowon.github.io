@@ -3,116 +3,553 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Electric Toothbrush Reverse Engineer | Seowon Jeong</title>
+  <title>Electric Toothbrush Reverse Engineering | Seowon Jeong</title>
+  <meta name="description" content="Reverse engineering case study: Sonicare 4100 teardown → VOC → HOQ requirements → concepts → prototype + DOE → DFM recommendations." />
+
+  <!-- IMPORTANT: this file lives in /portfolio, so go up one level -->
   <link rel="stylesheet" href="../style.css" />
+
+  <!-- Page-only styles (keeps global CSS simple) -->
+  <style>
+    /* Layout */
+    .proj-layout{ display:grid; grid-template-columns: 260px 1fr; gap: 20px; align-items:start; }
+    @media (max-width: 980px){ .proj-layout{ grid-template-columns: 1fr; } .toc{ position: static; } }
+
+    /* TOC */
+    .toc{
+      position: sticky; top: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: #fff;
+    }
+    .toc .label{ font-weight: 900; margin-bottom: 10px; }
+    .toc a{ display:block; padding: 8px 8px; border-radius: 10px; color: var(--muted); font-weight: 700; }
+    .toc a:hover{ background:#fafafa; color: var(--accent); }
+
+    /* Hero blocks */
+    .hero-grid{ display:grid; grid-template-columns: 1.2fr 0.8fr; gap: 14px; }
+    @media (max-width: 980px){ .hero-grid{ grid-template-columns: 1fr; } }
+
+    .kpi{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 980px){ .kpi{ grid-template-columns: 1fr; } }
+    .kpi .box{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      background:#fff;
+    }
+    .kpi .num{ font-weight: 900; font-size: 18px; margin-bottom: 2px; }
+    .kpi .cap{ color: var(--muted); font-size: 13px; }
+
+    .callout{
+      border: 1px solid var(--line);
+      background:#fafafa;
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      margin-top: 14px;
+    }
+
+    /* Content helpers */
+    .split{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 980px){ .split{ grid-template-columns: 1fr; } }
+
+    .bullets{ margin: 10px 0 0; padding-left: 18px; }
+    .bullets li{ margin: 6px 0; }
+
+    .caption{ color: var(--muted); font-size: 13px; margin-top: 8px; }
+  </style>
 </head>
+
 <body>
   <div class="container">
 
-<nav>
-  <a href="../index.html">Home</a>
-  <a href="../resume.html">Resume</a>
-  <a href="../projects.html">Projects</a>
-</nav>
+    <!-- NAV (go up one level) -->
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../resume.html">Resume</a>
+      <a href="../projects.html">Projects</a>
+    </nav>
 
-
+    <!-- HERO -->
     <div class="project-hero">
-      <h1>Electric Toothbrush Reverse Engineer</h1>
-      <div class="subtitle">Engineer · Austin, TX · Jan 2025 – May 2025</div>
+      <h1>Reverse Engineering: Philips Sonicare 4100</h1>
+      <div class="subtitle">User-centered redesign with manufacturable improvements</div>
 
-      <!-- Optional NDA/Disclosure box (matches the Apple page vibe) -->
       <div class="notice">
-        <strong>Disclosure:</strong> This page includes only non-proprietary, public, or personally created content.
+        <strong>Target roles:</strong> Mechanical Design / Product Design / Manufacturing (DFM, prototyping, validation)
       </div>
 
-      <!-- Hero media: image OR video -->
       <div class="media" style="margin-top:14px;">
-        <img src="../assets/clearscope-hero.jpg" alt="Laparoscopic simulator prototype" />
+        <img src="../assets/reverse.jpg" alt="Electric toothbrush reverse engineering hero image" />
       </div>
 
-      <!-- If you want a video instead, replace the image block above with:
-      <div class="media" style="margin-top:14px;">
-        <iframe class="video" src="https://www.youtube.com/embed/VIDEO_ID" title="Project video" allowfullscreen></iframe>
-      </div>
-      -->
+      <!-- Apple × Tesla hybrid framing -->
+      <section class="section" style="border-top:none; padding-top:16px;">
+        <div class="hero-grid">
+          <div class="card">
+            <strong>Why this project matters</strong>
+            <p class="small" style="margin-top:10px;">
+              Daily-use products often fail not because performance is weak, but because small friction adds up.
+              I reverse engineered a Sonicare 4100 to identify experience failures (mess, noise, comfort),
+              translate them into engineering requirements, and propose changes that remain manufacturable under cost constraints.
+            </p>
+          </div>
+
+          <div class="card">
+            <strong>TL;DR (for hiring managers)</strong>
+            <ul class="bullets">
+              <li>VOC interviews → HOQ to rank engineering requirements</li>
+              <li>Focused on splatter/drip reduction without hurting cleaning performance</li>
+              <li>Prototype + DOE to validate tradeoffs</li>
+              <li>DFM-first recommendation (low part count, cleanable geometry)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="kpi">
+          <div class="box">
+            <div class="num">10 VOC interviews</div>
+            <div class="cap">Needs capture + prioritization</div>
+          </div>
+          <div class="box">
+            <div class="num">&lt; $100 target</div>
+            <div class="cap">Design within cost constraints</div>
+          </div>
+          <div class="box">
+            <div class="num">Prototype + DOE + FMEA</div>
+            <div class="cap">Validation + risk mindset</div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>Outcome:</strong> A manufacturable direction focused on splatter/drip reduction at the brush-head interface,
+          preserving vibration energy transfer (cleaning effectiveness).
+        </div>
+      </section>
     </div>
 
-    <section class="section">
-      <h2>Overview</h2>
-      <p class="small">
-        Engineered and prototyped a human-like torso simulator for laparoscopic tool training, focusing on
-        realistic ergonomics, usability, and manufacturability.
-      </p>
-    </section>
+    <!-- MAIN -->
+    <div class="proj-layout">
 
-    <section class="section">
-      <h2>What I Did</h2>
-      <ul>
-        <li>Led CAD design and prototyping iterations with lean material selection.</li>
-        <li>Built and refined physical prototypes through additive manufacturing and fabrication.</li>
-        <li>Ran iterative user testing and integrated feedback into design revisions.</li>
-      </ul>
-    </section>
+      <!-- TOC -->
+      <aside class="toc">
+        <div class="label">On this page</div>
+        <a href="#overview">Overview</a>
+        <a href="#problem">Problem & Goals</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#teardown">Teardown & Architecture</a>
+        <a href="#requirements">Requirements (HOQ) & Tradeoffs</a>
+        <a href="#concepts">Concepts & Selection</a>
+        <a href="#prototype">Prototype</a>
+        <a href="#doe">DOE Validation</a>
+        <a href="#dfm">DFM / Manufacturing Notes</a>
+        <a href="#skills">Skills Highlight</a>
+        <a href="#links">Links</a>
+      </aside>
 
-    <section class="section">
-      <h2>Results</h2>
-      <ul>
-        <li>Delivered at ~10% of commercial market cost.</li>
-        <li>Achieved 90%+ satisfaction level through iterative testing and refinement.</li>
-      </ul>
-    </section>
+      <main>
 
-    <section class="section">
-      <h2>Top Skills Utilized</h2>
-      <div class="skills-grid">
-        <div class="skill-pill">Product Design</div>
-        <div class="skill-pill">Prototyping</div>
-        <div class="skill-pill">Additive Manufacturing</div>
-        <div class="skill-pill">DFM / Cost</div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Gallery</h2>
-      <div class="media"><img src="../assets/clearscope-1.jpg" alt="CAD render or prototype photo" /></div>
-      <div class="media" style="margin-top:14px;"><img src="../assets/clearscope-2.jpg" alt="Testing setup or design detail" /></div>
-    </section>
-
-    <section class="section">
-      <h2>Other Projects</h2>
-      <div class="other-grid">
-        <a class="other-card" href="battery.html">
-          <img src="../assets/battery-thumb.jpg" alt="Battery project thumbnail" />
-          <div class="pad">
-            <p class="title">Battery Defect Detection</p>
-            <p class="meta">Python · X-ray analysis · Control system</p>
+        <!-- OVERVIEW -->
+        <section class="section reveal" id="overview">
+          <h2>Overview</h2>
+          <p class="small">
+            This case study mirrors real hardware development: I started from user friction, converted it into measurable
+            engineering requirements, and validated a manufacturable direction with prototype testing and DOE.
+          </p>
+          <div class="split" style="margin-top:14px;">
+            <div class="card">
+              <strong>My role</strong>
+              <ul class="bullets">
+                <li>VOC planning + interviews</li>
+                <li>Functional modeling + HOQ</li>
+                <li>Teardown + subsystem analysis</li>
+                <li>Concept generation + selection</li>
+                <li>Prototype + DOE + FMEA</li>
+              </ul>
+            </div>
+            <div class="card">
+              <strong>Constraints</strong>
+              <ul class="bullets">
+                <li>Maintain cleaning effectiveness (vibration transfer)</li>
+                <li>Keep changes realistic for mass manufacturing</li>
+                <li>Cost target under $100 product constraint</li>
+                <li>Prefer minimal electronics changes</li>
+              </ul>
+            </div>
           </div>
-        </a>
+        </section>
 
-        <a class="other-card" href="infineon.html">
-          <img src="../assets/infineon-thumb.jpg" alt="Infineon thumbnail" />
-          <div class="pad">
-            <p class="title">Infineon Process DOE</p>
-            <p class="meta">DOE · Yield +10% · Efficiency +120%</p>
-          </div>
-        </a>
+        <!-- PROBLEM -->
+        <section class="section reveal" id="problem">
+          <h2>Problem & Goals</h2>
+          <div class="split">
+            <div class="card">
+              <strong>What users told me (VOC)</strong>
+              <ul class="bullets">
+                <li>Toothpaste splatter during operation</li>
+                <li>Dripping after brushing (countertop mess)</li>
+                <li>Noise/discomfort from vibration</li>
+                <li>Feature requests (e.g., tongue cleaning)</li>
+              </ul>
+              <p class="small" style="margin-top:10px;">
+                The key insight: these are “experience failures,” not core performance failures—yet they drive dissatisfaction.
+              </p>
+            </div>
 
-        <a class="other-card" href="ecocar.html">
-          <img src="../assets/ecocar-thumb.jpg" alt="EcoCar thumbnail" />
-          <div class="pad">
-            <p class="title">UT EcoCar Rear Redesign</p>
-            <p class="meta">SolidWorks/NX · Wiring reliability</p>
+            <div class="card">
+              <strong>Goals</strong>
+              <ul class="bullets">
+                <li>Reduce splatter/drip without compromising cleaning</li>
+                <li>Keep design cleanable and hygienic</li>
+                <li>Minimize added part count + assembly steps</li>
+                <li>Stay within realistic materials/process choices</li>
+              </ul>
+            </div>
           </div>
-        </a>
-      </div>
-    </section>
+        </section>
+
+        <!-- WORKFLOW -->
+        <section class="section reveal" id="workflow">
+          <h2>Workflow</h2>
+          <div class="split">
+            <div class="card">
+              <strong>1) VOC → Requirements</strong>
+              <ul class="bullets">
+                <li>Interviewed users and categorized needs</li>
+                <li>Mapped needs to engineering requirements using HOQ</li>
+                <li>Prioritized what mattered most (performance + UX)</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <strong>2) Engineer the solution</strong>
+              <ul class="bullets">
+                <li>Functional modeling and system architecture</li>
+                <li>Teardown to identify feasible intervention points</li>
+                <li>Concept generation using TRIZ-style conflict thinking</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="split" style="margin-top:14px;">
+            <div class="card">
+              <strong>3) Validate & derisk</strong>
+              <ul class="bullets">
+                <li>Prototype to test splatter/drip reduction direction</li>
+                <li>DOE to check performance tradeoffs (bristle + sound barrier)</li>
+                <li>FMEA mindset for reliability and safety risks</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <strong>Deliverable</strong>
+              <ul class="bullets">
+                <li>Manufacturable improvement direction</li>
+                <li>Tradeoff-backed recommendations</li>
+                <li>Clear next tests for iteration</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- TEARDOWN -->
+        <section class="section reveal" id="teardown">
+          <h2>Teardown & Architecture</h2>
+          <p class="small">
+            The teardown confirmed key subsystems: battery/charging coil, motor/drive, vibration transfer mechanism,
+            housing/seals, and user interface. This guided where design changes could happen without heavy electronics rework.
+          </p>
+
+          <div class="split" style="margin-top:14px;">
+            <div class="card">
+              <strong>Subsystem-level takeaways</strong>
+              <ul class="bullets">
+                <li>Cleaning depends on efficient vibration energy transfer</li>
+                <li>Noise “fixes” risk damping vibration (hurts performance)</li>
+                <li>Splatter/drip can be addressed at the head interface</li>
+              </ul>
+            </div>
+            <div class="card">
+              <strong>Where changes are feasible</strong>
+              <ul class="bullets">
+                <li>Brush head interface / external geometry</li>
+                <li>Grip/ergonomics materials and surface features</li>
+                <li>Minor housing/stand interactions (storage/hygiene)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="media" style="margin-top:14px;">
+            <img src="../assets/toothbrush-2.jpg" alt="Toothbrush teardown or internal layout" />
+          </div>
+          <div class="caption">Tip: replace with your best teardown photo or an exploded layout diagram.</div>
+        </section>
+
+        <!-- REQUIREMENTS -->
+        <section class="section reveal" id="requirements">
+          <h2>Requirements (HOQ) & Tradeoffs</h2>
+          <div class="split">
+            <div class="card">
+              <strong>Top engineering requirements (from HOQ)</strong>
+              <ul class="bullets">
+                <li>Vibration frequency / cleaning effectiveness</li>
+                <li>Compact storage volume</li>
+                <li>Brush stiffness / comfort</li>
+                <li>Power efficiency & battery life</li>
+                <li>Safety & hygiene constraints</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <strong>Key tradeoffs</strong>
+              <ul class="bullets">
+                <li>Noise reduction vs vibration transfer</li>
+                <li>Mess reduction vs added geometry/cleanability</li>
+                <li>Attachment features vs part count & assembly</li>
+              </ul>
+              <p class="small" style="margin-top:10px;">
+                Decision principle: prioritize changes that reduce daily friction while preserving core performance.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONCEPTS -->
+        <section class="section reveal" id="concepts">
+          <h2>Concepts & Selection</h2>
+          <div class="split">
+            <div class="card">
+              <strong>Concept A — Splash guard geometry</strong>
+              <ul class="bullets">
+                <li>Controls splatter trajectory near the brush head</li>
+                <li>Designed to be easy to rinse and wipe clean</li>
+                <li>Minimal added parts</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <strong>Concept B — Drip catcher attachment</strong>
+              <ul class="bullets">
+                <li>Reduces dripping after use</li>
+                <li>Attachment approach avoids reworking internal systems</li>
+                <li>Designed for snap-fit / press-fit manufacturability</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="split" style="margin-top:14px;">
+            <div class="card">
+              <strong>Concept C — Noise mitigation (careful)</strong>
+              <ul class="bullets">
+                <li>Target rattles/fit issues rather than damp vibration</li>
+                <li>Avoid “sound barrier” designs that block energy transfer</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <strong>Selection</strong>
+              <ul class="bullets">
+                <li>Primary focus: splatter/drip reduction</li>
+                <li>Best VOC alignment + manufacturability + low risk</li>
+                <li>Preserves cleaning performance</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="media" style="margin-top:14px;">
+            <img src="../assets/toothbrush-concepts.jpg" alt="Concept sketches for splatter guard and drip catcher" />
+          </div>
+          <div class="caption">Replace with your cleanest sketch page (high signal for product design roles).</div>
+        </section>
+
+        <!-- PROTOTYPE -->
+        <section class="section reveal" id="prototype">
+          <h2>Prototype</h2>
+          <p class="small">
+            I built a quick prototype to validate the concept direction: reduce splatter/drip while keeping the user interaction
+            simple and cleanable. The prototype targeted function-first validation (not final industrial design).
+          </p>
+
+          <div class="split" style="margin-top:14px;">
+            <div class="card">
+              <strong>Prototype intent</strong>
+              <ul class="bullets">
+                <li>Test whether guard/catcher geometry reduces mess</li>
+                <li>Check for weight/ergonomic impact</li>
+                <li>Identify hygiene/cleanability issues early</li>
+              </ul>
+            </div>
+            <div class="card">
+              <strong>What changed after prototyping</strong>
+              <ul class="bullets">
+                <li>Prioritized smooth surfaces and radii (easy cleaning)</li>
+                <li>Avoided crevices that trap residue</li>
+                <li>Moved toward flexible materials (TPU/silicone)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="media" style="margin-top:14px;">
+            <img src="../assets/toothbrush-prototype.jpg" alt="Prototype for splatter guard or drip catcher" />
+          </div>
+          <div class="caption">Use a clear prototype photo. Add a “before/after splatter” picture if possible.</div>
+        </section>
+
+        <!-- DOE -->
+        <section class="section reveal" id="doe">
+          <h2>DOE Validation</h2>
+          <p class="small">
+            I ran a simple 2×2 DOE to evaluate how two variables impact cleaning: bristle stiffness and adding a sound barrier.
+            Cleaning was evaluated by remaining “debris” after a fixed brushing time.
+          </p>
+
+          <div class="split" style="margin-top:14px;">
+            <div class="card">
+              <strong>DOE factors</strong>
+              <ul class="bullets">
+                <li>Soft vs stiff bristles</li>
+                <li>With vs without sound barrier</li>
+                <li>Controlled time + consistent test method</li>
+              </ul>
+            </div>
+            <div class="card">
+              <strong>Key result</strong>
+              <ul class="bullets">
+                <li>Sound barrier significantly reduced cleaning effectiveness</li>
+                <li>Stiffer bristles also decreased cleaning performance in this setup</li>
+                <li>Recommendation: avoid designs that damp vibration transfer</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout">
+            <strong>Engineering takeaway:</strong> comfort/noise improvements must be validated—some “nice” changes can break the main function.
+          </div>
+        </section>
+
+        <!-- DFM -->
+        <section class="section reveal" id="dfm">
+          <h2>DFM / Manufacturing Notes</h2>
+          <div class="split">
+            <div class="card">
+              <strong>Manufacturable attachment approach</strong>
+              <ul class="bullets">
+                <li><strong>Material:</strong> TPU (injection) or silicone (overmold) for comfort + washability</li>
+                <li><strong>Attachment:</strong> snap-fit / press-fit aligned to existing geometry</li>
+                <li><strong>Geometry:</strong> smooth radii, minimal undercuts, no residue traps</li>
+                <li><strong>Assembly:</strong> minimal parts; reduce steps; easy replacement</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <strong>Reliability mindset (FMEA)</strong>
+              <ul class="bullets">
+                <li>Heat + battery safety constraints</li>
+                <li>Housing/seal integrity (water ingress)</li>
+                <li>Brush wear and maintenance indicators</li>
+              </ul>
+              <p class="small" style="margin-top:10px;">
+                For the next iteration, I’d add cycle testing (snap-fit durability), rinse-time testing, and splash radius measurements.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="section reveal" id="skills">
+          <h2>Skills Highlight</h2>
+          <div class="skills-grid">
+            <div class="skill-pill">VOC Interviews</div>
+            <div class="skill-pill">Requirements / HOQ</div>
+            <div class="skill-pill">Functional Modeling</div>
+            <div class="skill-pill">Teardown + System Thinking</div>
+            <div class="skill-pill">Concept Generation (TRIZ)</div>
+            <div class="skill-pill">Rapid Prototyping</div>
+            <div class="skill-pill">DOE / Data Analysis</div>
+            <div class="skill-pill">DFM + Risk (FMEA)</div>
+          </div>
+        </section>
+
+        <!-- LINKS -->
+        <section class="section reveal" id="links">
+          <h2>Links</h2>
+          <div class="card">
+            <strong>Full report (PDF)</strong>
+            <p class="small" style="margin-top:10px;">
+              If you want deeper detail (HOQ, teardown, DOE tables), download the report:
+              <a class="btn" href="../assets/final-report-toothbrush.pdf" style="margin-left:8px;">Download PDF</a>
+            </p>
+            <p class="small" style="margin-top:10px;">
+              Place your PDF in <code>../assets/</code> as <code>final-report-toothbrush.pdf</code>, or change the link above.
+            </p>
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="../projects.html">Back to Projects</a>
+            <a class="btn" href="../resume.html">Resume</a>
+          </div>
+        </section>
+
+        <!-- OTHER PROJECTS -->
+        <section class="section reveal">
+          <h2>Other Projects</h2>
+          <div class="other-grid">
+            <a class="other-card" href="./clearscope.html">
+              <img src="../assets/clearscope-thumb.jpg" alt="ClearScope thumbnail" />
+              <div class="pad">
+                <div class="title">ClearScope Medical</div>
+                <p class="meta">Design & Manufacturing · Simulator build</p>
+              </div>
+            </a>
+
+            <a class="other-card" href="./infineon.html">
+              <img src="../assets/infineon-thumb.jpg" alt="Infineon thumbnail" />
+              <div class="pad">
+                <div class="title">Infineon DOE Optimization</div>
+                <p class="meta">Process / yield improvement</p>
+              </div>
+            </a>
+
+            <a class="other-card" href="./failureanalysis.html">
+              <img src="../assets/failureanalysis.jpg" alt="Failure analysis thumbnail" />
+              <div class="pad">
+                <div class="title">Failure Analysis</div>
+                <p class="meta">Root cause + mitigation</p>
+              </div>
+            </a>
+          </div>
+        </section>
+
+      </main>
+    </div>
 
     <footer>
-      <div>LinkedIn: <a href="https://www.linkedin.com/in/sj320/" target="_blank" rel="noreferrer">linkedin.com/in/sj320</a></div>
-      <div>Email: <a href="mailto:Seowonj320@gmail.com">Seowonj320@gmail.com</a></div>
-      <div style="margin-top:8px;">© 2026 Seowon Jeong</div>
+      <div>© 2026 Seowon Jeong</div>
     </footer>
 
   </div>
+
+  <!-- Scroll reveal -->
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      reveals.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const revealPoint = 120;
+        if (elementTop < windowHeight - revealPoint) el.classList.add('active');
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
 </body>
 </html>

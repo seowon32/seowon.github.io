@@ -1,256 +1,324 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>B.E.V.O. BattleBot | Seowon Jeong</title>
-  <link rel="stylesheet" href="../style.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>B.E.V.O Battle Bot | Seowon Jeong</title>
+<meta name="description" content="Battle bot mechanical design case study: dual-weapon wedge saw robot optimized through VOC, HOQ, DOE, and DFMA." />
+
+<link rel="stylesheet" href="../style.css" />
+
+<style>
+.proj-layout{ display:grid; grid-template-columns:260px 1fr; gap:20px; }
+@media (max-width:980px){ .proj-layout{ grid-template-columns:1fr;} .toc{ position:static;} }
+
+.toc{
+position:sticky;
+top:14px;
+border:1px solid var(--line);
+border-radius:var(--radius);
+padding:14px;
+background:#fff;
+}
+.toc a{
+display:block;
+padding:8px;
+font-weight:700;
+color:var(--muted);
+border-radius:10px;
+}
+.toc a:hover{ background:#fafafa; color:var(--accent); }
+
+.kpi{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin-top:12px;
+}
+.kpi .box{
+border:1px solid var(--line);
+border-radius:14px;
+padding:12px;
+background:#fff;
+}
+
+.split{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media(max-width:980px){ .split{ grid-template-columns:1fr;} }
+
+.bullets{ padding-left:18px; margin-top:8px; }
+.caption{ font-size:13px; color:var(--muted); margin-top:8px;}
+</style>
 </head>
+
 <body>
-  <div class="container">
+<div class="container">
 
-    <!-- NAV (use ../ because this file is inside /portfolio/) -->
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../resume.html">Resume</a>
-      <a href="../projects.html">Projects</a>
-    </nav>
+<nav>
+<a href="../index.html">Home</a>
+<a href="../resume.html">Resume</a>
+<a href="../projects.html">Projects</a>
+</nav>
 
-    <!-- HERO -->
-    <div class="project-hero">
-      <h1>B.E.V.O. Combat BattleBot Development</h1>
-      <div class="subtitle">Mechanical Design & Manufacturing Engineer · Team Project · SPARC Beetleweight (3 lb)</div>
+<div class="project-hero">
+<h1>B.E.V.O Battle Bot — Dual Weapon Combat Robot</h1>
+<div class="subtitle">Lightweight wedge-saw architecture · Weapon-driven strategy · DFMA-optimized build</div>
 
-      <div class="notice">
-        <strong>Disclosure:</strong> This page includes only non-proprietary, public, or personally created content.
-      </div>
+<div class="media">
+<img src="../assets/battle.jpg" alt="Battle Bot"/>
+</div>
 
-      <!-- HERO IMAGE (replace with your best photo/render) -->
-      <div class="media" style="margin-top:14px;">
-        <img src="../assets/battlebot-hero.jpg" alt="B.E.V.O. BattleBot hero image" />
-      </div>
+<section class="section" style="border-top:none;">
 
-      <!-- Optional quick tags -->
-      <div class="section" style="border-top:none; padding-top:16px;">
-        <div class="tags">
-          <span class="tag" style="pointer-events:none;">Combat robotics</span>
-          <span class="tag" style="pointer-events:none;">CAD + prototyping</span>
-          <span class="tag" style="pointer-events:none;">DFM / assembly</span>
-          <span class="tag" style="pointer-events:none;">FEA + DOE</span>
-          <span class="tag" style="pointer-events:none;">FMEA</span>
-        </div>
-      </div>
-    </div>
+<div class="kpi">
+<div class="box"><strong>Weight Class</strong><br/>3 lb Beetleweight</div>
+<div class="box"><strong>Budget</strong><br/>$296 total</div>
+<div class="box"><strong>Competition Result</strong><br/>Won 1 Match</div>
+</div>
 
-    <!-- OVERVIEW -->
-    <section class="section reveal" id="overview">
-      <h2>Overview</h2>
-      <p class="small">
-        Collaboratively designed and manufactured <strong>B.E.V.O.</strong>, a competition-ready combat robot for the
-        SPARC beetleweight tournament (3 lb class). The project integrated offensive weapon systems, structural durability,
-        mobility control, and electrical safety into a lightweight platform designed to survive high-energy impacts while
-        delivering mechanical damage and maintaining operational reliability.
-      </p>
-    </section>
+<div class="notice">
+<strong>My Role:</strong> Design-Manufacturing Lead & Testing Engineer
+</div>
 
-    <!-- PROBLEM -->
-    <section class="section reveal" id="problem">
-      <h2>Problem</h2>
-      <p class="small">
-        Combat robotics is a multi-objective engineering challenge: maximize offensive effectiveness and maneuverability
-        while meeting strict weight limits, safety regulations, and durability requirements. Our team needed to design a
-        rule-compliant robot capable of inflicting damage, maintaining control, and remaining functional under aggressive
-        combat conditions.
-      </p>
-    </section>
+</section>
+</div>
 
-    <!-- OBJECTIVES -->
-    <section class="section reveal" id="objectives">
-      <h2>Engineering Objectives</h2>
-      <ul>
-        <li>Stay within the beetleweight (3 lb) class weight limit</li>
-        <li>Deliver effective weapon-based damage while maintaining control and aggression</li>
-        <li>Maintain mobility even if flipped during combat</li>
-        <li>Provide fast acceleration, stable driving, and tight turning capability</li>
-        <li>Meet SPARC safety requirements (shutdown, weapon locking, battery safety)</li>
-        <li>Balance performance with manufacturability and budget constraints</li>
-      </ul>
-    </section>
+<div class="proj-layout">
 
-    <!-- CONTRIBUTIONS -->
-    <section class="section reveal" id="contributions">
-      <h2>My Contributions</h2>
-      <p class="small">
-        This was a team project. I contributed across the full build cycle—from concept and CAD to manufacturing,
-        testing, and iteration.
-      </p>
+<aside class="toc">
+<div><strong>On this page</strong></div>
+<a href="#overview">Overview</a>
+<a href="#challenge">Design Challenge</a>
+<a href="#process">Design Process</a>
+<a href="#concept">Concept Selection</a>
+<a href="#architecture">Mechanical Architecture</a>
+<a href="#validation">Testing & DOE</a>
+<a href="#dfma">Manufacturing Strategy</a>
+<a href="#competition">Competition Performance</a>
+<a href="#lessons">Lessons Learned</a>
+<a href="#skills">Skills</a>
+</aside>
 
-      <h3 style="margin-top:14px;">Mechanical Design & CAD</h3>
-      <ul>
-        <li>Modeled chassis components and subsystem layouts for manufacturability and serviceability</li>
-        <li>Supported drivetrain + weapon packaging to manage center of gravity and weight distribution</li>
-        <li>Contributed to integration between mechanical structure and electrical/mechatronic subsystems</li>
-      </ul>
+<main>
 
-      <h3 style="margin-top:14px;">Manufacturing & Prototyping</h3>
-      <ul>
-        <li>Fabricated components using additive manufacturing and supported machining of key mechanical elements</li>
-        <li>Applied DFMA thinking to reduce assembly complexity and improve maintainability</li>
-        <li>Supported assembly, wiring accommodation, and subsystem integration during build</li>
-      </ul>
+<section id="overview" class="section reveal">
+<h2>Overview</h2>
 
-      <h3 style="margin-top:14px;">Testing, Validation & Reliability</h3>
-      <ul>
-        <li>Participated in FEA validation of critical structural components</li>
-        <li>Supported DOE-style testing to evaluate performance variables and design trade-offs</li>
-        <li>Contributed to FMEA to identify high-risk failure modes and guide design improvements</li>
-      </ul>
-    </section>
+<p class="small">
+Designed and manufactured a SPARC-compliant combat robot focused on maximizing damage output, maneuverability, and survivability under strict weight and cost constraints. The final design integrated a dual-weapon wedge-saw system supported by structured engineering decision tools and iterative prototyping.
+</p>
 
-    <!-- DESIGN INNOVATION -->
-    <section class="section reveal" id="innovation">
-      <h2>Design Innovation</h2>
-      <p class="small">
-        The robot used a <strong>2-wheeled wedge saw combat system</strong> that combined a lifting wedge with a rotating
-        slicing weapon. The wedge helped elevate and expose vulnerable underside components of opponent robots, enabling
-        the weapon to apply damage more effectively while preserving agility and control.
-      </p>
-    </section>
+</section>
 
-    <!-- APPROACH -->
-    <section class="section reveal" id="approach">
-      <h2>Engineering Approach</h2>
-      <ol>
-        <li>Reviewed competition rules, judging criteria, and safety constraints</li>
-        <li>Generated multiple concepts and evaluated trade-offs using structured decision methods</li>
-        <li>Built CAD models and integrated subsystems into a manufacturable architecture</li>
-        <li>Prototyped components and iterated based on functional testing and reliability risks</li>
-        <li>Validated performance through competition-style testing and post-match analysis</li>
-      </ol>
-    </section>
+<section id="challenge" class="section reveal">
+<h2>Design Challenge</h2>
 
-    <!-- RESULTS -->
-    <section class="section reveal" id="results">
-      <h2>Results & Impact</h2>
-      <ul>
-        <li>Produced a rule-compliant combat robot capable of offensive engagement and controlled driving</li>
-        <li>Demonstrated effective wedge + weapon engagement strategy during competition</li>
-        <li>Maintained drivetrain and electrical functionality during combat operation</li>
-        <li>Reduced risk priority score through reliability improvements (FMEA-driven iteration)</li>
-      </ul>
+<div class="split">
 
-      <div class="card" style="margin-top:14px;">
-        <strong>Tip:</strong> If you want this to feel even stronger, add your exact results here (match record,
-        speed, risk score numbers, weight, weapon RPM, etc.).
-      </div>
-    </section>
+<div class="card">
+<strong>Performance Goals</strong>
+<ul class="bullets">
+<li>Inflict significant structural damage to opponents</li>
+<li>Maintain mobility when flipped</li>
+<li>Balance durability with strict weight limits</li>
+<li>Remain within $300 cost budget</li>
+</ul>
+</div>
 
-    <!-- FAILURE ANALYSIS -->
-    <section class="section reveal" id="lessons">
-      <h2>Failure Analysis & Lessons Learned</h2>
-      <p class="small">
-        Post-competition evaluation highlighted trade-offs between weight and durability. Under repeated high-energy impacts,
-        structural components showed damage consistent with material limitations, reinforcing the importance of material selection,
-        armor strategy, and load-path design in dynamic systems.
-      </p>
-      <ul>
-        <li>Identified durability bottlenecks and stress concentration areas for future reinforcement</li>
-        <li>Improved understanding of how manufacturing choices affect reliability under impact loading</li>
-        <li>Outlined next-iteration improvements (materials, reinforcement, and modular replacement strategy)</li>
-      </ul>
-    </section>
+<div class="card">
+<strong>Competition Constraints</strong>
+<ul class="bullets">
+<li>3 lb maximum weight</li>
+<li>Weapon shutdown safety requirements</li>
+<li>Manual electrical disconnect</li>
+<li>Restricted weapon types</li>
+</ul>
+</div>
 
-    <!-- TOP SKILLS -->
-    <section class="section reveal" id="skills">
-      <h2>Top Skills Utilized</h2>
-      <div class="skills-grid">
-        <div class="skill-pill">Mechanical Design</div>
-        <div class="skill-pill">CAD Modeling</div>
-        <div class="skill-pill">Rapid Prototyping</div>
-        <div class="skill-pill">DFM / Assembly</div>
-        <div class="skill-pill">Reliability (FMEA)</div>
-        <div class="skill-pill">Testing & Validation</div>
-      </div>
-    </section>
+</div>
 
-    <!-- GALLERY -->
-    <section class="section reveal" id="gallery">
-      <h2>Gallery</h2>
+</section>
 
-      <!-- Replace these with your actual photos/renders -->
-      <div class="media">
-        <img src="../assets/battlebot-1.jpg" alt="BattleBot CAD render or assembled robot" />
-      </div>
+<section id="process" class="section reveal">
+<h2>Engineering Design Process</h2>
 
-      <div class="media" style="margin-top:14px;">
-        <img src="../assets/battlebot-2.jpg" alt="Weapon/wedge mechanism detail" />
-      </div>
+<ul class="bullets">
+<li>Voice of Customer derived from SPARC scoring criteria</li>
+<li>House of Quality mapped user needs to engineering specs</li>
+<li>Morphological matrix generated weapon and mobility variants</li>
+<li>Decision matrix selected final architecture</li>
+</ul>
 
-      <div class="media" style="margin-top:14px;">
-        <img src="../assets/battlebot-3.jpg" alt="Testing setup or competition photo" />
-      </div>
+<p class="small">
+Structured engineering methods allowed objective evaluation of tradeoffs between innovation, cost, and maneuverability.
+</p>
 
-      <p class="small" style="margin-top:12px;">
-        Add short captions under each image (optional): subsystem layout, weapon detail, test iteration, and final build.
-      </p>
-    </section>
+</section>
 
-    <!-- OTHER PROJECTS -->
-    <section class="section reveal">
-      <h2>Other Projects</h2>
-      <div class="other-grid">
-        <a class="other-card" href="clearscope.html">
-          <img src="../assets/clearscope-thumb.jpg" alt="ClearScope thumbnail" />
-          <div class="pad">
-            <p class="title">ClearScope Simulator</p>
-            <p class="meta">Medical simulation · Prototyping · DFM</p>
-          </div>
-        </a>
+<section id="concept" class="section reveal">
+<h2>Concept Selection</h2>
 
-        <a class="other-card" href="battery.html">
-          <img src="../assets/battery-thumb.jpg" alt="Battery thumbnail" />
-          <div class="pad">
-            <p class="title">Battery Defect Detection</p>
-            <p class="meta">Python · X-ray analysis · Control system</p>
-          </div>
-        </a>
+<div class="split">
 
-        <a class="other-card" href="infineon.html">
-          <img src="../assets/infineon-thumb.jpg" alt="Infineon thumbnail" />
-          <div class="pad">
-            <p class="title">Infineon Process DOE</p>
-            <p class="meta">DOE · Yield improvement · Efficiency</p>
-          </div>
-        </a>
-      </div>
-    </section>
+<div class="card">
+<strong>Concept Variants Explored</strong>
+<ul class="bullets">
+<li>Horizontal spinning bar</li>
+<li>Egg beater spinner</li>
+<li>Drone combat robot</li>
+<li>4-wheel flipper</li>
+<li>Wedge-saw hybrid (final)</li>
+</ul>
+</div>
 
-    <!-- FOOTER -->
-    <footer>
-      <div>LinkedIn: <a href="https://www.linkedin.com/in/sj320/" target="_blank" rel="noreferrer">linkedin.com/in/sj320</a></div>
-      <div>Email: <a href="mailto:Seowonj320@gmail.com">Seowonj320@gmail.com</a></div>
-      <div style="margin-top:8px;">© 2026 Seowon Jeong</div>
-    </footer>
+<div class="card">
+<strong>Final Selection Rationale</strong>
+<ul class="bullets">
+<li>High innovation score</li>
+<li>Effective multi-weapon capability</li>
+<li>Strong control and aggression potential</li>
+<li>Best weighted score in decision matrix</li>
+</ul>
+</div>
 
-  </div>
+</div>
 
-  <!-- Subtle scroll animation -->
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
+</section>
 
-    const revealOnScroll = () => {
-      const windowHeight = window.innerHeight;
-      reveals.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-        const revealPoint = 120;
-        if (elementTop < windowHeight - revealPoint) {
-          el.classList.add('active');
-        }
-      });
-    };
+<section id="architecture" class="section reveal">
+<h2>Mechanical Architecture</h2>
 
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
-  </script>
+<div class="split">
+
+<div class="card">
+<strong>Weapon System</strong>
+<ul class="bullets">
+<li>Vertical rotating saw blade</li>
+<li>Actuated wedge lifting mechanism</li>
+<li>Belt driven weapon transmission</li>
+<li>Linear actuator for opponent positioning</li>
+</ul>
+</div>
+
+<div class="card">
+<strong>Mobility System</strong>
+<ul class="bullets">
+<li>Two-wheel pivot steering</li>
+<li>Flip-resistant geometry</li>
+<li>Protected internal electronics</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<section id="validation" class="section reveal">
+<h2>Testing & DOE</h2>
+
+<p class="small">
+I led a factorial Design of Experiments to quantify performance tradeoffs.
+</p>
+
+<ul class="bullets">
+<li>Variables tested: chassis material, wheel type, actuator integration</li>
+<li>Measured lap time over 8-ft arena distance</li>
+<li>JMP and regression analysis verified significance</li>
+</ul>
+
+<p class="small">
+Results showed rubber wheels and PLA chassis significantly improved speed performance while actuator influence was minimal.
+</p>
+
+</section>
+
+<section id="dfma" class="section reveal">
+<h2>Manufacturing Strategy (DFMA)</h2>
+
+<div class="split">
+
+<div class="card">
+<strong>Manufacturing Optimization</strong>
+<ul class="bullets">
+<li>Standardized fastener sizes reduced assembly complexity</li>
+<li>Manual machining avoided CNC setup time</li>
+<li>3D printed structural components reduced cost</li>
+</ul>
+</div>
+
+<div class="card">
+<strong>Reliability Improvements</strong>
+<ul class="bullets">
+<li>Redesigned actuator pickup piece after FEA stress analysis</li>
+<li>Weapon shaft collar clamping prevented slip failures</li>
+<li>Throttle limiting reduced motor overheating risk</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<section id="competition" class="section reveal">
+<h2>Competition Performance</h2>
+
+<ul class="bullets">
+<li>Dominated first opponent via wedge-lift and saw attack</li>
+<li>Disabled opponent drivetrain and wiring</li>
+<li>Lost second round due to armor failure vs metal spinner</li>
+</ul>
+
+<p class="small">
+Despite structural damage, electronics and weapon systems remained operational throughout testing and competition.
+</p>
+
+</section>
+
+<section id="lessons" class="section reveal">
+<h2>Engineering Lessons Learned</h2>
+
+<ul class="bullets">
+<li>Weight constraints strongly influence material selection</li>
+<li>Innovation often trades off against durability</li>
+<li>Subsystem modularity accelerates testing and iteration</li>
+<li>Early DFMA decisions reduce build time and risk</li>
+</ul>
+
+</section>
+
+<section id="skills" class="section reveal">
+<h2>Skills Demonstrated</h2>
+
+<div class="skills-grid">
+<div class="skill-pill">Mechanical System Design</div>
+<div class="skill-pill">DFMA & Assembly Planning</div>
+<div class="skill-pill">Prototyping & Testing</div>
+<div class="skill-pill">DOE & Statistical Validation</div>
+<div class="skill-pill">Failure Analysis</div>
+<div class="skill-pill">Combat Robotics Integration</div>
+</div>
+
+</section>
+
+</main>
+</div>
+
+<footer>
+<div>© 2026 Seowon Jeong</div>
+</footer>
+
+</div>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const revealOnScroll = () => {
+const h = window.innerHeight;
+reveals.forEach(el=>{
+if(el.getBoundingClientRect().top < h-120){ el.classList.add('active'); }
+});
+};
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+</script>
+
 </body>
 </html>
