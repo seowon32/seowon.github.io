@@ -1,118 +1,322 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Racing RC Car | Seowon Jeong</title>
-  <link rel="stylesheet" href="../style.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RC Racing Car Design | Seowon Jeong</title>
+<meta name="description" content="Design and manufacturing case study: belt-driven RC racing car with nylon chassis, adjustable powertrain, and performance validation." />
+
+<link rel="stylesheet" href="../style.css" />
+
+<style>
+.proj-layout{ display:grid; grid-template-columns:260px 1fr; gap:20px; }
+@media (max-width:980px){ .proj-layout{ grid-template-columns:1fr; } .toc{ position:static;} }
+
+.toc{
+position:sticky;
+top:14px;
+border:1px solid var(--line);
+border-radius:var(--radius);
+padding:14px;
+background:#fff;
+}
+.toc a{
+display:block;
+padding:8px;
+border-radius:10px;
+font-weight:700;
+color:var(--muted);
+}
+.toc a:hover{ background:#fafafa; color:var(--accent); }
+
+.kpi{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin-top:12px;
+}
+.kpi .box{
+border:1px solid var(--line);
+border-radius:14px;
+padding:12px;
+background:#fff;
+}
+
+.split{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media(max-width:980px){ .split{ grid-template-columns:1fr; } }
+
+.bullets{ padding-left:18px; margin-top:8px; }
+.caption{ font-size:13px; color:var(--muted); margin-top:8px;}
+</style>
 </head>
+
 <body>
-  <div class="container">
+<div class="container">
 
 <nav>
-  <a href="../index.html">Home</a>
-  <a href="../resume.html">Resume</a>
-  <a href="../projects.html">Projects</a>
+<a href="../index.html">Home</a>
+<a href="../resume.html">Resume</a>
+<a href="../projects.html">Projects</a>
 </nav>
 
+<div class="project-hero">
+<h1>RC Racing Car — Design & Manufacturing</h1>
+<div class="subtitle">Lightweight chassis · Adjustable belt drivetrain · Performance-validated build</div>
 
-    <div class="project-hero">
-      <h1>Racing RC Car</h1>
-      <div class="subtitle">Design & Manufacturing Lead · Austin, TX · Sep 2024 – Jan 2025</div>
+<div class="media">
+<img src="../assets/racing-thumb.jpg" alt="RC Racing Car"/>
+</div>
 
-      <!-- Optional NDA/Disclosure box (matches the Apple page vibe) -->
-      <div class="notice">
-        <strong>Disclosure:</strong> This page includes only non-proprietary, public, or personally created content.
-      </div>
+<section class="section" style="border-top:none;">
 
-      <!-- Hero media: image OR video -->
-      <div class="media" style="margin-top:14px;">
-        <img src="../assets/clearscope-hero.jpg" alt="Laparoscopic simulator prototype" />
-      </div>
+<div class="kpi">
+<div class="box"><strong>Weight</strong><br/>872 g</div>
+<div class="box"><strong>Top Speed</strong><br/>4.5 m/s</div>
+<div class="box"><strong>Power-Weight</strong><br/>73.4 W/kg</div>
+</div>
 
-      <!-- If you want a video instead, replace the image block above with:
-      <div class="media" style="margin-top:14px;">
-        <iframe class="video" src="https://www.youtube.com/embed/VIDEO_ID" title="Project video" allowfullscreen></iframe>
-      </div>
-      -->
-    </div>
+<div class="callout">
+<strong>My Role:</strong> Test Lead — validation, performance analysis, system debugging, and design iteration.
+</div>
 
-    <section class="section">
-      <h2>Overview</h2>
-      <p class="small">
-        Engineered and prototyped a human-like torso simulator for laparoscopic tool training, focusing on
-        realistic ergonomics, usability, and manufacturability.
-      </p>
-    </section>
+</section>
+</div>
 
-    <section class="section">
-      <h2>What I Did</h2>
-      <ul>
-        <li>Led CAD design and prototyping iterations with lean material selection.</li>
-        <li>Built and refined physical prototypes through additive manufacturing and fabrication.</li>
-        <li>Ran iterative user testing and integrated feedback into design revisions.</li>
-      </ul>
-    </section>
+<div class="proj-layout">
 
-    <section class="section">
-      <h2>Results</h2>
-      <ul>
-        <li>Delivered at ~10% of commercial market cost.</li>
-        <li>Achieved 90%+ satisfaction level through iterative testing and refinement.</li>
-      </ul>
-    </section>
+<aside class="toc">
+<div class="label"><strong>On this page</strong></div>
+<a href="#overview">Overview</a>
+<a href="#problem">Design Challenge</a>
+<a href="#architecture">System Architecture</a>
+<a href="#chassis">Chassis Design</a>
+<a href="#powertrain">Powertrain Design</a>
+<a href="#steering">Steering System</a>
+<a href="#testing">Testing & Validation</a>
+<a href="#dfm">Manufacturing Decisions</a>
+<a href="#results">Results</a>
+<a href="#skills">Skills</a>
+</aside>
 
-    <section class="section">
-      <h2>Top Skills Utilized</h2>
-      <div class="skills-grid">
-        <div class="skill-pill">Product Design</div>
-        <div class="skill-pill">Prototyping</div>
-        <div class="skill-pill">Additive Manufacturing</div>
-        <div class="skill-pill">DFM / Cost</div>
-      </div>
-    </section>
+<main>
 
-    <section class="section">
-      <h2>Gallery</h2>
-      <div class="media"><img src="../assets/clearscope-1.jpg" alt="CAD render or prototype photo" /></div>
-      <div class="media" style="margin-top:14px;"><img src="../assets/clearscope-2.jpg" alt="Testing setup or design detail" /></div>
-    </section>
+<section id="overview" class="section reveal">
+<h2>Overview</h2>
+<p class="small">
+Designed and manufactured a high-performance RC race vehicle from concept to competition.
+The project focused on balancing structural strength, drivetrain efficiency, manufacturability, and cost constraints.
+</p>
+</section>
 
-    <section class="section">
-      <h2>Other Projects</h2>
-      <div class="other-grid">
-        <a class="other-card" href="battery.html">
-          <img src="../assets/battery-thumb.jpg" alt="Battery project thumbnail" />
-          <div class="pad">
-            <p class="title">Battery Defect Detection</p>
-            <p class="meta">Python · X-ray analysis · Control system</p>
-          </div>
-        </a>
+<section id="problem" class="section reveal">
+<h2>Design Challenge</h2>
 
-        <a class="other-card" href="infineon.html">
-          <img src="../assets/infineon-thumb.jpg" alt="Infineon thumbnail" />
-          <div class="pad">
-            <p class="title">Infineon Process DOE</p>
-            <p class="meta">DOE · Yield +10% · Efficiency +120%</p>
-          </div>
-        </a>
+<div class="split">
+<div class="card">
+<strong>Primary Goals</strong>
+<ul class="bullets">
+<li>Maximize drivetrain efficiency</li>
+<li>Maintain structural durability under crash loads</li>
+<li>Achieve competitive speed and acceleration</li>
+<li>Design for manufacturability using additive processes</li>
+</ul>
+</div>
 
-        <a class="other-card" href="ecocar.html">
-          <img src="../assets/ecocar-thumb.jpg" alt="EcoCar thumbnail" />
-          <div class="pad">
-            <p class="title">UT EcoCar Rear Redesign</p>
-            <p class="meta">SolidWorks/NX · Wiring reliability</p>
-          </div>
-        </a>
-      </div>
-    </section>
+<div class="card">
+<strong>Constraints</strong>
+<ul class="bullets">
+<li>Limited part availability</li>
+<li>Cost limitations</li>
+<li>Tight build schedule</li>
+<li>Weight vs strength tradeoff</li>
+</ul>
+</div>
+</div>
 
-    <footer>
-      <div>LinkedIn: <a href="https://www.linkedin.com/in/sj320/" target="_blank" rel="noreferrer">linkedin.com/in/sj320</a></div>
-      <div>Email: <a href="mailto:Seowonj320@gmail.com">Seowonj320@gmail.com</a></div>
-      <div style="margin-top:8px;">© 2026 Seowon Jeong</div>
-    </footer>
+</section>
 
-  </div>
+<section id="architecture" class="section reveal">
+<h2>System Architecture</h2>
+
+<p class="small">
+The vehicle was composed of four major subsystems: chassis, drivetrain, steering, and electronics. Subsystem integration focused on maintaining belt alignment, load distribution, and steering responsiveness.
+</p>
+
+<ul class="bullets">
+<li>Belt-driven rear powertrain</li>
+<li>3D printed nylon structural chassis</li>
+<li>Front-wheel parallel steering</li>
+<li>High-torque brushed motor + ESC</li>
+</ul>
+
+</section>
+
+<section id="chassis" class="section reveal">
+<h2>Chassis Design</h2>
+
+<div class="split">
+
+<div class="card">
+<strong>Material Selection</strong>
+<ul class="bullets">
+<li>Nylon selected for high strength-to-weight ratio</li>
+<li>Improved durability vs PLA prototypes</li>
+<li>Allowed crash resistance without fracture</li>
+</ul>
+</div>
+
+<div class="card">
+<strong>Manufacturing Optimization</strong>
+<ul class="bullets">
+<li>Reduced infill to minimize cost</li>
+<li>Spiderweb rib structure reduced stress fractures</li>
+<li>FEA performed in SolidWorks to remove excess material</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<section id="powertrain" class="section reveal">
+<h2>Powertrain Design</h2>
+
+<div class="split">
+
+<div class="card">
+<strong>Design Strategy</strong>
+<ul class="bullets">
+<li>Belt transmission for smoother torque delivery</li>
+<li>Adjustable tensioning system to prevent slip</li>
+<li>Gear ratio modified during build for torque optimization</li>
+</ul>
+</div>
+
+<div class="card">
+<strong>Manufacturing Challenges</strong>
+<ul class="bullets">
+<li>Pulley sourcing forced redesign to 1:9 ratio</li>
+<li>Custom tensioning rod added</li>
+<li>New wheel mounting required axle threading</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<section id="steering" class="section reveal">
+<h2>Steering System</h2>
+
+<div class="split">
+<div class="card">
+<strong>Initial Concept</strong>
+<ul class="bullets">
+<li>Ackerman steering geometry modeled</li>
+<li>Predicted turning radius: 16.7 cm</li>
+</ul>
+</div>
+
+<div class="card">
+<strong>Final Implementation</strong>
+<ul class="bullets">
+<li>Parallel front-wheel steering selected</li>
+<li>Improved reliability and manufacturability</li>
+<li>Measured turning radius: 30-40 cm</li>
+</ul>
+</div>
+</div>
+
+</section>
+
+<section id="testing" class="section reveal">
+<h2>Testing & Validation</h2>
+
+<p class="small">
+As test lead, I performed track testing, subsystem validation, and failure troubleshooting.
+</p>
+
+<ul class="bullets">
+<li>Measured acceleration, top speed, braking</li>
+<li>Validated drivetrain tension and durability</li>
+<li>Identified steering mounting failures post-race</li>
+</ul>
+
+</section>
+
+<section id="dfm" class="section reveal">
+<h2>Manufacturing Decisions</h2>
+
+<div class="split">
+
+<div class="card">
+<strong>DFM Highlights</strong>
+<ul class="bullets">
+<li>3D printed stabilizing components reduced assembly failure</li>
+<li>Snap and friction fit wheel mounts simplified assembly</li>
+<li>Material thickness tuned for additive manufacturing reliability</li>
+</ul>
+</div>
+
+<div class="card">
+<strong>Future Improvements</strong>
+<ul class="bullets">
+<li>Reduce structural thickness to lower weight</li>
+<li>Add bolt-adjustable tensioning systems</li>
+<li>Optimize 3D printing geometry for reliability</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<section id="results" class="section reveal">
+<h2>Performance Results</h2>
+
+<ul class="bullets">
+<li>Top Speed: 4.5 m/s</li>
+<li>Acceleration: ~3 m/s²</li>
+<li>Turning Radius: 30–40 cm</li>
+<li>Completed two races with minor repair required</li>
+</ul>
+
+</section>
+
+<section id="skills" class="section reveal">
+<h2>Skills Demonstrated</h2>
+
+<div class="skills-grid">
+<div class="skill-pill">Mechanical Design</div>
+<div class="skill-pill">DFM / Additive Manufacturing</div>
+<div class="skill-pill">System Integration</div>
+<div class="skill-pill">Test & Validation</div>
+<div class="skill-pill">Failure Analysis</div>
+<div class="skill-pill">Powertrain Design</div>
+</div>
+
+</section>
+
+</main>
+</div>
+
+<footer>
+<div>© 2026 Seowon Jeong</div>
+</footer>
+
+</div>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const revealOnScroll = () => {
+const h = window.innerHeight;
+reveals.forEach(el=>{
+if(el.getBoundingClientRect().top < h-120){ el.classList.add('active'); }
+});
+};
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+</script>
+
 </body>
 </html>

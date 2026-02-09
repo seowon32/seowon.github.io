@@ -3,116 +3,120 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Failure Analysis of Car Mount | Seowon Jeong</title>
+  <title>Failure Analysis: Transmission Mount | Seowon Jeong</title>
+  <meta name="description" content="Failure analysis case study: die-cast A380 transmission mount fracture—visual inspection, microscopy/SEM, EDS/hardness, and FEA to determine root cause." />
+
+  <!-- This file lives in /portfolio -->
   <link rel="stylesheet" href="../style.css" />
+
+  <!-- Page-only helpers -->
+  <style>
+    .proj-layout{ display:grid; grid-template-columns: 260px 1fr; gap: 20px; align-items:start; }
+    @media (max-width: 980px){ .proj-layout{ grid-template-columns: 1fr; } .toc{ position: static; } }
+
+    .toc{
+      position: sticky; top: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      background:#fff;
+    }
+    .toc .label{ font-weight: 900; margin-bottom: 10px; }
+    .toc a{
+      display:block; padding: 8px 8px; border-radius: 10px;
+      color: var(--muted); font-weight: 800;
+    }
+    .toc a:hover{ background:#fafafa; color: var(--accent); }
+
+    .kpi{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 980px){ .kpi{ grid-template-columns: 1fr; } }
+    .kpi .box{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      background:#fff;
+    }
+    .kpi .num{ font-weight: 900; font-size: 18px; margin-bottom: 2px; }
+    .kpi .cap{ color: var(--muted); font-size: 13px; }
+
+    .callout{
+      border: 1px solid var(--line);
+      background:#fafafa;
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      margin-top: 14px;
+    }
+
+    .split{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 980px){ .split{ grid-template-columns: 1fr; } }
+
+    .bullets{ margin: 10px 0 0; padding-left: 18px; }
+    .bullets li{ margin: 6px 0; }
+
+    .caption{ color: var(--muted); font-size: 13px; margin-top: 8px; }
+  </style>
 </head>
+
 <body>
   <div class="container">
 
-<nav>
-  <a href="../index.html">Home</a>
-  <a href="../resume.html">Resume</a>
-  <a href="../projects.html">Projects</a>
-</nav>
+    <!-- NAV -->
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../resume.html">Resume</a>
+      <a href="../projects.html">Projects</a>
+    </nav>
 
-
+    <!-- HERO -->
     <div class="project-hero">
-      <h1>Failure Analysis</h1>
-      <div class="subtitle">Failure Analysis Engineer · Austin, TX · Jan 2024 – May 2024</div>
+      <h1>Failure Analysis: Police Interceptor Transmission Mount</h1>
+      <div class="subtitle">Root cause investigation using microscopy, SEM/EDS, hardness, and FEA</div>
 
-      <!-- Optional NDA/Disclosure box (matches the Apple page vibe) -->
       <div class="notice">
-        <strong>Disclosure:</strong> This page includes only non-proprietary, public, or personally created content.
+        <strong>Type:</strong> Failure analysis case study · fracture mechanics + materials characterization · engineering judgment
       </div>
 
-      <!-- Hero media: image OR video -->
       <div class="media" style="margin-top:14px;">
-        <img src="../assets/clearscope-hero.jpg" alt="Laparoscopic simulator prototype" />
+        <img src="../assets/failure-hero.jpg" alt="Fractured transmission mount (hero image)" />
       </div>
 
-      <!-- If you want a video instead, replace the image block above with:
-      <div class="media" style="margin-top:14px;">
-        <iframe class="video" src="https://www.youtube.com/embed/VIDEO_ID" title="Project video" allowfullscreen></iframe>
-      </div>
-      -->
-    </div>
-
-    <section class="section">
-      <h2>Overview</h2>
-      <p class="small">
-        Engineered and prototyped a human-like torso simulator for laparoscopic tool training, focusing on
-        realistic ergonomics, usability, and manufacturability.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>What I Did</h2>
-      <ul>
-        <li>Led CAD design and prototyping iterations with lean material selection.</li>
-        <li>Built and refined physical prototypes through additive manufacturing and fabrication.</li>
-        <li>Ran iterative user testing and integrated feedback into design revisions.</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>Results</h2>
-      <ul>
-        <li>Delivered at ~10% of commercial market cost.</li>
-        <li>Achieved 90%+ satisfaction level through iterative testing and refinement.</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>Top Skills Utilized</h2>
-      <div class="skills-grid">
-        <div class="skill-pill">Product Design</div>
-        <div class="skill-pill">Prototyping</div>
-        <div class="skill-pill">Additive Manufacturing</div>
-        <div class="skill-pill">DFM / Cost</div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Gallery</h2>
-      <div class="media"><img src="../assets/clearscope-1.jpg" alt="CAD render or prototype photo" /></div>
-      <div class="media" style="margin-top:14px;"><img src="../assets/clearscope-2.jpg" alt="Testing setup or design detail" /></div>
-    </section>
-
-    <section class="section">
-      <h2>Other Projects</h2>
-      <div class="other-grid">
-        <a class="other-card" href="battery.html">
-          <img src="../assets/battery-thumb.jpg" alt="Battery project thumbnail" />
-          <div class="pad">
-            <p class="title">Battery Defect Detection</p>
-            <p class="meta">Python · X-ray analysis · Control system</p>
+      <section class="section" style="border-top:none; padding-top:16px;">
+        <div class="split">
+          <div class="card">
+            <strong>TL;DR (for hiring managers)</strong>
+            <ul class="bullets">
+              <li>Investigated a fractured transmission mount from a 2021 Ford Explorer Police Interceptor (AWD)</li>
+              <li>Mapped fracture surfaces and identified a likely impact site + brittle chevrons</li>
+              <li>Located a ~1 mm pore at the origin with cracks emanating (casting porosity)</li>
+              <li>SEM showed brittle fast fracture; no fatigue striations observed</li>
+              <li>FEA + fracture mechanics showed impact loading could drive crack propagation (likely 5–10 mph Δv range)</li>
+            </ul>
           </div>
-        </a>
 
-        <a class="other-card" href="infineon.html">
-          <img src="../assets/infineon-thumb.jpg" alt="Infineon thumbnail" />
-          <div class="pad">
-            <p class="title">Infineon Process DOE</p>
-            <p class="meta">DOE · Yield +10% · Efficiency +120%</p>
+          <div class="card">
+            <strong>Why this matters</strong>
+            <p class="small" style="margin-top:10px;">
+              This project shows end-to-end reliability thinking: evidence collection → hypothesis elimination →
+              material verification → micromechanism identification → stress modeling → actionable recommendations.
+            </p>
           </div>
-        </a>
+        </div>
 
-        <a class="other-card" href="ecocar.html">
-          <img src="../assets/ecocar-thumb.jpg" alt="EcoCar thumbnail" />
-          <div class="pad">
-            <p class="title">UT EcoCar Rear Redesign</p>
-            <p class="meta">SolidWorks/NX · Wiring reliability</p>
+        <div class="kpi">
+          <div class="box">
+            <div class="num">Vehicle @ 33,249 miles</div>
+            <div class="cap">Failure discovered during routine maintenance</div>
           </div>
-        </a>
-      </div>
-    </section>
-
-    <footer>
-      <div>LinkedIn: <a href="https://www.linkedin.com/in/sj320/" target="_blank" rel="noreferrer">linkedin.com/in/sj320</a></div>
-      <div>Email: <a href="mailto:Seowonj320@gmail.com">Seowonj320@gmail.com</a></div>
-      <div style="margin-top:8px;">© 2026 Seowon Jeong</div>
-    </footer>
-
-  </div>
-</body>
-</html>
+          <div class="box">
+            <div class="num">Material: A380 (Al-Si8Cu3Fe)</div>
+            <div class="cap">Die-cast alloy; porosity common defect mode</div>
+          </div>
+          <div class="box">
+            <div class="num">Mode: brittle fast fracture</div>
+            <div class="cap">Fatigue ruled out via fractography</div>
+          </div>

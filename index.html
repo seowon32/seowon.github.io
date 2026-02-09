@@ -4,83 +4,150 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Seowon Jeong | Mechanical Engineering Portfolio</title>
+  <meta name="description" content="Seowon Jeong — Mechanical Engineering (Advanced Design & Manufacturing). Portfolio focused on product design, prototyping, and DFM for tech hardware roles." />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="container">
 
     <!-- Navigation -->
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" aria-current="page">Home</a>
       <a href="resume.html">Resume</a>
       <a href="projects.html">Projects</a>
     </nav>
 
-    <!-- Hero -->
-    <div class="hero">
-      <div class="two-col">
-        <img class="avatar" src="assets/profile.jpg" alt="Seowon Jeong" />
-        <div>
-          <div class="small">Mechanical Engineering Portfolio</div>
-          <h1>Seowon Jeong</h1>
-          <p>
-            B.S./M.S. Mechanical Engineering (Advanced Design & Manufacturing)  
-            <br />University of Texas at Austin · Class of 2026
-          </p>
+    <main>
+      <!-- Hero -->
+      <div class="hero">
+        <div class="two-col">
+          <img class="avatar" src="assets/profile.jpg" alt="Seowon Jeong" />
+          <div>
+            <div class="small">Mechanical Engineering Portfolio</div>
+            <h1>Seowon Jeong</h1>
+            <p>
+              B.S./M.S. Mechanical Engineering (Advanced Design &amp; Manufacturing)
+              <br />University of Texas at Austin · Class of 2026
+            </p>
+
+            <!-- Primary actions -->
+            <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn" href="projects.html">View Projects</a>
+              <a class="btn" href="resume.html">Resume</a>
+              <a class="btn" href="#contact">Contact</a>
+            </div>
+
+            <!-- Quick focus chips -->
+            <div class="tags" style="margin-top:14px;">
+              <span class="tag">DFM</span>
+              <span class="tag">CAD → Prototype → Test</span>
+              <span class="tag">Manufacturing Optimization</span>
+              <span class="tag">DOE / Statistics</span>
+              <span class="tag">Hardware Product Design</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Summary -->
-    <section class="section reveal">
-      <h2>Summary</h2>
-      <p class="small">
-        I am a Mechanical Engineering graduate (B.S., M.S.) from The University of Texas at Austin,
-        specializing in Advanced Design and Manufacturing with a strong focus on product design engineering.
-        My experience spans user-centered product design, CAD and prototyping, and manufacturing optimization,
-        including developing low-cost medical simulators and improving semiconductor yield and production
-        efficiency at Infineon Technologies.
-      </p>
-    </section>
+      <!-- Summary -->
+      <section class="section reveal">
+        <h2>Summary</h2>
+        <p class="small">
+          Mechanical Engineering B.S./M.S. candidate at UT Austin focused on design and manufacturing for
+          real-world hardware products. I build from user needs → requirements → CAD/prototypes → validation,
+          and I enjoy optimizing designs for manufacturability, cost, and reliability.
+        </p>
+      </section>
 
-    <!-- Strengths & Focus Areas -->
-    <section class="section reveal">
-      <div class="lists">
-        <div class="card">
-          <h2>Strengths</h2>
-          <ul>
-            <li>User-centered product design mindset</li>
-            <li>CAD → prototype → validation workflows</li>
-            <li>Manufacturability, cost, and efficiency optimization</li>
-            <li>Data-driven decision making (DOE, statistics)</li>
-          </ul>
+      <!-- Strengths & Focus Areas -->
+      <section class="section reveal">
+        <div class="lists">
+          <div class="card">
+            <h2>Strengths</h2>
+            <ul>
+              <li>User-centered product design mindset</li>
+              <li>CAD → prototype → validation workflows</li>
+              <li>Manufacturability, cost, and efficiency optimization</li>
+              <li>Data-driven decision making (DOE, statistics)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2>Focus Areas</h2>
+            <ul>
+              <li>Advanced Design &amp; Manufacturing</li>
+              <li>Additive manufacturing and prototyping</li>
+              <li>Manufacturing process optimization</li>
+              <li>Mechanical product design engineering</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects -->
+      <section class="section reveal">
+        <h2>Featured Projects</h2>
+        <p class="small" style="margin:0 0 14px;">
+          A few case studies most relevant to design/manufacturing roles in tech.
+        </p>
+
+        <div class="project-grid">
+          <!-- ClearScope -->
+          <a class="project-card" href="portfolio/clearscope.html">
+            <img src="assets/clearscope-thumb.jpg" alt="ClearScope simulator thumbnail" />
+            <div class="pad">
+              <h3>ClearScope Medical — Laparoscopic Training Simulator</h3>
+              <p>Design &amp; Manufacturing Lead · ~10% market cost · 90%+ satisfaction</p>
+            </div>
+          </a>
+
+          <!-- Infineon -->
+          <a class="project-card" href="portfolio/infineon.html">
+            <img src="assets/infineon-thumb.jpg" alt="Infineon process optimization thumbnail" />
+            <div class="pad">
+              <h3>Infineon — Semiconductor Etch Process Optimization</h3>
+              <p>DOE · Yield +10% · Efficiency +120% · $50,400 annual savings</p>
+            </div>
+          </a>
+
+          <!-- Reverse Engineering -->
+          <a class="project-card" href="portfolio/reverse.html">
+            <img src="assets/reverse.jpg" alt="Electric toothbrush reverse engineering thumbnail" />
+            <div class="pad">
+              <h3>Electric Toothbrush Reverse Engineering</h3>
+              <p>VOC → Requirements → Concepts · Manufacturability + usability improvements</p>
+            </div>
+          </a>
+
+          <!-- Battery -->
+          <a class="project-card" href="portfolio/battery.html">
+            <img src="assets/battery-thumb.jpg" alt="Battery defect detection thumbnail" />
+            <div class="pad">
+              <h3>Battery Defect Detection &amp; Control System</h3>
+              <p>Python · 10,000+ X-rays · Saved 24+ hours · +50% efficiency</p>
+            </div>
+          </a>
         </div>
 
-        <div class="card">
-          <h2>Focus Areas</h2>
-          <ul>
-            <li>Advanced Design & Manufacturing</li>
-            <li>Additive manufacturing and prototyping</li>
-            <li>Manufacturing process optimization</li>
-            <li>Mechanical product design engineering</li>
-          </ul>
+        <div style="margin-top:14px;">
+          <a class="btn" href="projects.html">See all projects</a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Contact -->
-    <section class="section reveal">
-      <h2>Contact</h2>
-      <p class="small">
-        Email:
-        <a href="mailto:Seowonj320@gmail.com">Seowonj320@gmail.com</a>
-        <br />
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/sj320/" target="_blank" rel="noreferrer">
-          linkedin.com/in/sj320
-        </a>
-      </p>
-    </section>
+      <!-- Contact -->
+      <section class="section reveal" id="contact">
+        <h2>Contact</h2>
+        <p class="small" style="margin:0;">
+          Email: <a href="mailto:Seowonj320@gmail.com">Seowonj320@gmail.com</a>
+          <br />
+          LinkedIn:
+          <a href="https://www.linkedin.com/in/sj320/" target="_blank" rel="noreferrer">
+            linkedin.com/in/sj320
+          </a>
+        </p>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -88,24 +155,22 @@
     </footer>
 
   </div>
+
+  <!-- Scroll reveal -->
   <script>
-  const reveals = document.querySelectorAll('.reveal');
+    const reveals = document.querySelectorAll('.reveal');
 
-  const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
-    reveals.forEach(el => {
-      const elementTop = el.getBoundingClientRect().top;
-      const revealPoint = 120;
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      reveals.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const revealPoint = 120;
+        if (elementTop < windowHeight - revealPoint) el.classList.add('active');
+      });
+    };
 
-      if (elementTop < windowHeight - revealPoint) {
-        el.classList.add('active');
-      }
-    });
-  };
-
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll(); // trigger on load
-</script>
-
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // trigger on load
+  </script>
 </body>
 </html>
