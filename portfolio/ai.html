@@ -3,115 +3,360 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Battery Defect Detection and Control System | Seowon Jeong</title>
+  <title>Human–AI Design Lab Research | Seowon Jeong</title>
+  <meta name="description" content="Research experience: how designers perceive AI-generated CAD concepts and how design engineers use AI across the Double Diamond problem-solving process." />
+
+  <!-- This file lives in /portfolio -->
   <link rel="stylesheet" href="../style.css" />
+
+  <!-- Page-only helpers -->
+  <style>
+    .proj-layout{ display:grid; grid-template-columns:260px 1fr; gap:20px; align-items:start; }
+    @media (max-width:980px){ .proj-layout{ grid-template-columns:1fr; } .toc{ position:static; } }
+
+    .toc{
+      position: sticky; top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      background:#fff;
+    }
+    .toc .label{ font-weight: 900; margin-bottom: 10px; }
+    .toc a{
+      display:block; padding: 8px 8px; border-radius: 10px;
+      color: var(--muted); font-weight: 800;
+    }
+    .toc a:hover{ background:#fafafa; color: var(--accent); }
+
+    .hero-grid{ display:grid; grid-template-columns: 1.2fr 0.8fr; gap: 14px; }
+    @media (max-width:980px){ .hero-grid{ grid-template-columns:1fr; } }
+
+    .kpi{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width:980px){ .kpi{ grid-template-columns:1fr; } }
+    .kpi .box{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background:#fff;
+    }
+    .kpi .num{ font-weight: 900; font-size: 18px; margin-bottom: 2px; }
+    .kpi .cap{ color: var(--muted); font-size: 13px; }
+
+    .callout{
+      border: 1px solid var(--line);
+      background:#fafafa;
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-top: 14px;
+    }
+
+    .split{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width:980px){ .split{ grid-template-columns:1fr; } }
+
+    .bullets{ margin: 10px 0 0; padding-left: 18px; }
+    .bullets li{ margin: 6px 0; }
+    .caption{ color: var(--muted); font-size: 13px; margin-top: 8px; }
+
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width:980px){ .steps{ grid-template-columns:1fr 1fr; } }
+    @media (max-width:560px){ .steps{ grid-template-columns:1fr; } }
+    .step{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background:#fff;
+    }
+    .step .t{ font-weight: 900; margin-bottom: 4px; }
+    .step .d{ color: var(--muted); font-size: 13px; }
+  </style>
 </head>
+
 <body>
   <div class="container">
 
-<nav>
-  <a href="../index.html">Home</a>
-  <a href="../resume.html">Resume</a>
-  <a href="../projects.html">Projects</a>
-</nav>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../resume.html">Resume</a>
+      <a href="../projects.html">Projects</a>
+    </nav>
 
     <div class="project-hero">
-      <h1>Human-AI Design Engineering</h1>
-      <div class="subtitle">Research Assistance · Austin, TX · Sep 2025 – May 2026</div>
+      <h1>Human–AI Design Lab Research</h1>
+      <div class="subtitle">Studying trust, preference, and real-world AI workflows in engineering design</div>
 
-      <!-- Optional NDA/Disclosure box (matches the Apple page vibe) -->
       <div class="notice">
-        <strong>Disclosure:</strong> This page includes only non-proprietary, public, or personally created content.
+        <strong>Theme:</strong> How people evaluate AI-generated design outputs (incl. CAD concepts) and how design engineers use AI across the Double Diamond process.
       </div>
 
-      <!-- Hero media: image OR video -->
       <div class="media" style="margin-top:14px;">
-        <img src="../assets/clearscope-hero.jpg" alt="Laparoscopic simulator prototype" />
+        <img src="../assets/hai-hero.jpg" alt="Human–AI Design Lab research hero image" />
       </div>
 
-      <!-- If you want a video instead, replace the image block above with:
-      <div class="media" style="margin-top:14px;">
-        <iframe class="video" src="https://www.youtube.com/embed/VIDEO_ID" title="Project video" allowfullscreen></iframe>
-      </div>
-      -->
+      <section class="section" style="border-top:none; padding-top:16px;">
+        <div class="hero-grid">
+          <div class="card">
+            <strong>What I worked on</strong>
+            <p class="small" style="margin-top:10px;">
+              I supported research investigating (1) how people <em>feel</em> about AI-generated design/CAD concepts—trust,
+              perceived quality, and willingness to use outputs—and (2) how working design engineers use AI when solving open-ended
+              problems using the Double Diamond framework (Discover → Define → Develop → Deliver).
+            </p>
+          </div>
+
+          <div class="card">
+            <strong>TL;DR (for hiring managers)</strong>
+            <ul class="bullets">
+              <li>Designed research workflow + materials to study perception of AI-generated design outputs</li>
+              <li>Co-organized an industry workshop with design engineers to map AI use across Double Diamond</li>
+              <li>Captured qualitative signals (trust, hesitation points, “handoff moments”) and translated them into design insights</li>
+              <li>Communicated results as actionable recommendations (tooling, prompts, evaluation, and collaboration practices)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="kpi">
+          <div class="box">
+            <div class="num">Human factors focus</div>
+            <div class="cap">Trust, preference, perceived usefulness</div>
+          </div>
+          <div class="box">
+            <div class="num">Industry workshop</div>
+            <div class="cap">AI use mapped to Double Diamond stages</div>
+          </div>
+          <div class="box">
+            <div class="num">Design + engineering lens</div>
+            <div class="cap">Insights framed for real product workflows</div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>Why this is valuable for design/manufacturing roles:</strong> strong engineers don’t only build mechanisms—
+          they build <em>decision-making systems</em>. This work shows how I translate messy human feedback into structured requirements
+          and practical workflow improvements.
+        </div>
+      </section>
     </div>
 
-    <section class="section">
-      <h2>Overview</h2>
-      <p class="small">
-        Engineered and prototyped a human-like torso simulator for laparoscopic tool training, focusing on
-        realistic ergonomics, usability, and manufacturability.
-      </p>
-    </section>
+    <div class="proj-layout">
 
-    <section class="section">
-      <h2>What I Did</h2>
-      <ul>
-        <li>Led CAD design and prototyping iterations with lean material selection.</li>
-        <li>Built and refined physical prototypes through additive manufacturing and fabrication.</li>
-        <li>Ran iterative user testing and integrated feedback into design revisions.</li>
-      </ul>
-    </section>
+      <aside class="toc">
+        <div class="label">On this page</div>
+        <a href="#overview">Overview</a>
+        <a href="#cad">Study: Perception of AI-generated CAD concepts</a>
+        <a href="#workshop">Industry workshop: AI in Double Diamond</a>
+        <a href="#methods">Methods & What I Delivered</a>
+        <a href="#insights">Key insights (portfolio-safe)</a>
+        <a href="#skills">Skills Highlight</a>
+        <a href="#links">Related paper / links</a>
+      </aside>
 
-    <section class="section">
-      <h2>Results</h2>
-      <ul>
-        <li>Delivered at ~10% of commercial market cost.</li>
-        <li>Achieved 90%+ satisfaction level through iterative testing and refinement.</li>
-      </ul>
-    </section>
+      <main>
 
-    <section class="section">
-      <h2>Top Skills Utilized</h2>
-      <div class="skills-grid">
-        <div class="skill-pill">Product Design</div>
-        <div class="skill-pill">Prototyping</div>
-        <div class="skill-pill">Additive Manufacturing</div>
-        <div class="skill-pill">DFM / Cost</div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Gallery</h2>
-      <div class="media"><img src="../assets/clearscope-1.jpg" alt="CAD render or prototype photo" /></div>
-      <div class="media" style="margin-top:14px;"><img src="../assets/clearscope-2.jpg" alt="Testing setup or design detail" /></div>
-    </section>
-
-    <section class="section">
-      <h2>Other Projects</h2>
-      <div class="other-grid">
-        <a class="other-card" href="battery.html">
-          <img src="../assets/battery-thumb.jpg" alt="Battery project thumbnail" />
-          <div class="pad">
-            <p class="title">Battery Defect Detection</p>
-            <p class="meta">Python · X-ray analysis · Control system</p>
+        <section class="section reveal" id="overview">
+          <h2>Overview</h2>
+          <p class="small">
+            Generative AI is changing engineering design—but adoption depends on human trust, evaluation habits, and where AI fits into
+            real workflows. In the Human–AI Design Lab, I worked on two complementary research tracks:
+          </p>
+          <div class="split" style="margin-top:14px;">
+            <div class="card">
+              <strong>Track A — AI-generated CAD perception</strong>
+              <ul class="bullets">
+                <li>How people judge AI-generated design/CAD concepts</li>
+                <li>What increases trust vs skepticism</li>
+                <li>Where AI outputs help or hinder decision-making</li>
+              </ul>
+            </div>
+            <div class="card">
+              <strong>Track B — Double Diamond workshop</strong>
+              <ul class="bullets">
+                <li>How design engineers use AI in Discover/Define/Develop/Deliver</li>
+                <li>Where AI accelerates work vs creates risk</li>
+                <li>What “handoffs” need clearer artifacts (requirements, sketches, CAD, DFM notes)</li>
+              </ul>
+            </div>
           </div>
-        </a>
+        </section>
 
-        <a class="other-card" href="infineon.html">
-          <img src="../assets/infineon-thumb.jpg" alt="Infineon thumbnail" />
-          <div class="pad">
-            <p class="title">Infineon Process DOE</p>
-            <p class="meta">DOE · Yield +10% · Efficiency +120%</p>
-          </div>
-        </a>
+        <section class="section reveal" id="cad">
+          <h2>Study: Perception of AI-generated CAD concepts</h2>
+          <div class="split">
+            <div class="card">
+              <strong>Research question</strong>
+              <p class="small" style="margin-top:10px;">
+                When AI generates geometry or design concepts, what do people actually feel—trust, doubt, curiosity, excitement—and
+                what criteria do they use to decide whether to move forward?
+              </p>
+              <ul class="bullets">
+                <li>Perceived quality and feasibility</li>
+                <li>Trust and willingness to adopt</li>
+                <li>Preference vs skepticism triggers</li>
+              </ul>
+            </div>
 
-        <a class="other-card" href="ecocar.html">
-          <img src="../assets/ecocar-thumb.jpg" alt="EcoCar thumbnail" />
-          <div class="pad">
-            <p class="title">UT EcoCar Rear Redesign</p>
-            <p class="meta">SolidWorks/NX · Wiring reliability</p>
+            <div class="card">
+              <strong>What I contributed</strong>
+              <ul class="bullets">
+                <li>Helped structure study materials so participants could evaluate concepts consistently</li>
+                <li>Organized feedback into themes that map to engineering decisions (requirements, feasibility, manufacturability)</li>
+                <li>Prepared clear write-ups for internal discussion and iteration</li>
+              </ul>
+            </div>
           </div>
-        </a>
-      </div>
-    </section>
+
+          <div class="callout">
+            <strong>Portfolio note:</strong> If you want, we can add a small “sample stimuli” panel (blurred/anonymized) and a
+            simple rubric screenshot—those visuals make research pages feel much more concrete.
+          </div>
+        </section>
+
+        <section class="section reveal" id="workshop">
+          <h2>Industry workshop: AI in the Double Diamond</h2>
+          <p class="small">
+            I helped organize a workshop with professionals working in design engineering to understand how AI tools are used
+            in real problem-solving workflows—especially during ambiguity (Discover/Define) and iteration (Develop/Deliver).
+          </p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="t">Discover</div>
+              <div class="d">AI used for research acceleration, brainstorming, competitor teardown summaries, risk lists</div>
+            </div>
+            <div class="step">
+              <div class="t">Define</div>
+              <div class="d">AI used to draft requirements, clarify constraints, generate decision matrices and test plans</div>
+            </div>
+            <div class="step">
+              <div class="t">Develop</div>
+              <div class="d">AI used for concept iteration, CAD ideation support, failure-mode checklists, quick calculations</div>
+            </div>
+            <div class="step">
+              <div class="t">Deliver</div>
+              <div class="d">AI used for documentation, validation reporting, and communication across stakeholders</div>
+            </div>
+          </div>
+
+          <div class="split" style="margin-top:14px;">
+            <div class="card">
+              <strong>What I did</strong>
+              <ul class="bullets">
+                <li>Coordinated participants and agenda logistics</li>
+                <li>Prepared workshop prompts aligned to Double Diamond</li>
+                <li>Captured patterns across roles (design, manufacturing, validation)</li>
+              </ul>
+            </div>
+            <div class="card">
+              <strong>Outputs</strong>
+              <ul class="bullets">
+                <li>Workflow map of AI touchpoints + “do not use AI here” moments</li>
+                <li>Common failure modes (hallucinated constraints, overconfidence in feasibility)</li>
+                <li>Recommendations for safer, more useful AI use in engineering</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="methods">
+          <h2>Methods & What I Delivered</h2>
+          <div class="split">
+            <div class="card">
+              <strong>Methods</strong>
+              <ul class="bullets">
+                <li>Workshop facilitation + structured prompts</li>
+                <li>Thematic coding of qualitative feedback</li>
+                <li>Converting qualitative statements into “engineering-ready” insights</li>
+                <li>Evidence-first synthesis (what we saw → what it means → what to do next)</li>
+              </ul>
+            </div>
+            <div class="card">
+              <strong>Deliverables</strong>
+              <ul class="bullets">
+                <li>Workshop materials (prompts, worksheets)</li>
+                <li>Summary of findings with actionable recommendations</li>
+                <li>Draft narrative for publication-style communication</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="insights">
+          <h2>Key insights</h2>
+          <div class="card">
+            <ul class="bullets">
+              <li><strong>Trust is stage-dependent:</strong> engineers accept AI faster in early exploration than late-stage deliverables.</li>
+              <li><strong>Feasibility needs anchors:</strong> teams want AI outputs paired with constraints (materials, process limits, tolerances).</li>
+              <li><strong>Artifacts matter:</strong> when AI produces “pretty concepts,” teams still need requirements, test plans, and DFM notes to move forward.</li>
+              <li><strong>Positive surprise is rare:</strong> generative models can create diversity, but “surprising + liked” concepts are a narrow space—shown in our related work on surprise vs novelty. :contentReference[oaicite:0]{index=0}</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section reveal" id="skills">
+          <h2>Skills Highlight</h2>
+          <div class="skills-grid">
+            <div class="skill-pill">Human-Centered Research</div>
+            <div class="skill-pill">Workshop Design</div>
+            <div class="skill-pill">Qualitative Analysis</div>
+            <div class="skill-pill">Requirements Thinking</div>
+            <div class="skill-pill">Design Process Mapping</div>
+            <div class="skill-pill">Technical Communication</div>
+            <div class="skill-pill">AI + Engineering Workflow Insight</div>
+            <div class="skill-pill">Cross-functional Collaboration</div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="links">
+          <h2>Related paper / links</h2>
+          <div class="card">
+            <strong>Related work (PDF)</strong>
+            <p class="small" style="margin-top:10px;">
+              Novelty vs surprise in AI-generated designs (Stable Diffusion case study). This paper supports the framing that
+              “novel” outputs are not always “positively surprising,” which motivates more careful evaluation methods in design research.
+            </p>
+            <p class="small" style="margin-top:10px;">
+              <a class="btn" href="../assets/Can_text_to_image_models_generate_surprising_product_designs_.pdf">Open PDF</a>
+            </p>
+            <p class="small" style="margin-top:10px;">
+              (Make sure this file is placed in <code>../assets/</code> with the same name, or update the link.)
+            </p>
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="../projects.html">Back to Projects</a>
+            <a class="btn" href="../resume.html">Resume</a>
+          </div>
+        </section>
+
+      </main>
+    </div>
 
     <footer>
-      <div>LinkedIn: <a href="https://www.linkedin.com/in/sj320/" target="_blank" rel="noreferrer">linkedin.com/in/sj320</a></div>
-      <div>Email: <a href="mailto:Seowonj320@gmail.com">Seowonj320@gmail.com</a></div>
-      <div style="margin-top:8px;">© 2026 Seowon Jeong</div>
+      <div>© 2026 Seowon Jeong</div>
     </footer>
 
   </div>
+
+  <!-- Scroll reveal -->
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      const h = window.innerHeight;
+      reveals.forEach(el => {
+        if (el.getBoundingClientRect().top < h - 120) el.classList.add('active');
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
 </body>
 </html>

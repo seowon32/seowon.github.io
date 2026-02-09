@@ -1,118 +1,280 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Battery Defect Detection and Control System | Seowon Jeong</title>
-  <link rel="stylesheet" href="../style.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EcoCAR Vehicle Systems Design | Seowon Jeong</title>
+<meta name="description" content="UT Austin EcoCAR project: systems design and integration work on a Cadillac LYRIQ EV, focusing on CAD-based wiring and packaging challenges using Siemens NX." />
+
+<link rel="stylesheet" href="../style.css" />
+
+<style>
+.proj-layout{ display:grid; grid-template-columns:260px 1fr; gap:20px; }
+@media (max-width:980px){ .proj-layout{ grid-template-columns:1fr;} .toc{ position:static;} }
+
+.toc{
+position:sticky;
+top:14px;
+border:1px solid var(--line);
+border-radius:14px;
+padding:14px;
+background:#fff;
+}
+
+.toc a{
+display:block;
+padding:8px;
+font-weight:700;
+color:var(--muted);
+border-radius:10px;
+}
+.toc a:hover{ background:#fafafa; color:var(--accent); }
+
+.kpi{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin-top:12px;
+}
+@media (max-width:980px){ .kpi{ grid-template-columns:1fr;} }
+
+.kpi .box{
+border:1px solid var(--line);
+border-radius:14px;
+padding:12px;
+background:#fff;
+}
+
+.split{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media(max-width:980px){ .split{ grid-template-columns:1fr;} }
+
+.bullets{ padding-left:18px; margin-top:8px;}
+.caption{ font-size:13px; color:var(--muted); margin-top:8px;}
+</style>
 </head>
+
 <body>
-  <div class="container">
+<div class="container">
 
 <nav>
-  <a href="../index.html">Home</a>
-  <a href="../resume.html">Resume</a>
-  <a href="../projects.html">Projects</a>
+<a href="../index.html">Home</a>
+<a href="../resume.html">Resume</a>
+<a href="../projects.html">Projects</a>
 </nav>
 
+<div class="project-hero">
+<h1>EcoCAR @ UT Austin — Vehicle Systems Design & Integration</h1>
+<div class="subtitle">EV systems integration · Wiring & packaging · Siemens NX CAD</div>
 
-    <div class="project-hero">
-      <h1>EcoCar Electric Vehical Program</h1>
-      <div class="subtitle">Mechanical Systems Integration Engineer · Austin, TX · Oct 2023 – May 2024</div>
+<div class="media">
+<img src="../assets/ecocar-hero.jpg" alt="EcoCAR Cadillac LYRIQ EV"/>
+</div>
 
-      <!-- Optional NDA/Disclosure box (matches the Apple page vibe) -->
-      <div class="notice">
-        <strong>Disclosure:</strong> This page includes only non-proprietary, public, or personally created content.
-      </div>
+<section class="section" style="border-top:none;">
 
-      <!-- Hero media: image OR video -->
-      <div class="media" style="margin-top:14px;">
-        <img src="../assets/clearscope-hero.jpg" alt="Laparoscopic simulator prototype" />
-      </div>
+<div class="kpi">
+<div class="box"><strong>Platform</strong><br/>Cadillac LYRIQ (EV)</div>
+<div class="box"><strong>Team</strong><br/>Systems Design & Integration</div>
+<div class="box"><strong>Tools</strong><br/>Siemens NX</div>
+</div>
 
-      <!-- If you want a video instead, replace the image block above with:
-      <div class="media" style="margin-top:14px;">
-        <iframe class="video" src="https://www.youtube.com/embed/VIDEO_ID" title="Project video" allowfullscreen></iframe>
-      </div>
-      -->
-    </div>
+<div class="notice">
+<strong>What this experience shows:</strong> exposure to OEM-grade vehicle systems, CAD-based integration challenges,
+and real-world constraints in EV design—even within a short project timeline.
+</div>
 
-    <section class="section">
-      <h2>Overview</h2>
-      <p class="small">
-        Engineered and prototyped a human-like torso simulator for laparoscopic tool training, focusing on
-        realistic ergonomics, usability, and manufacturability.
-      </p>
-    </section>
+</section>
+</div>
 
-    <section class="section">
-      <h2>What I Did</h2>
-      <ul>
-        <li>Led CAD design and prototyping iterations with lean material selection.</li>
-        <li>Built and refined physical prototypes through additive manufacturing and fabrication.</li>
-        <li>Ran iterative user testing and integrated feedback into design revisions.</li>
-      </ul>
-    </section>
+<div class="proj-layout">
 
-    <section class="section">
-      <h2>Results</h2>
-      <ul>
-        <li>Delivered at ~10% of commercial market cost.</li>
-        <li>Achieved 90%+ satisfaction level through iterative testing and refinement.</li>
-      </ul>
-    </section>
+<aside class="toc">
+<div><strong>On this page</strong></div>
+<a href="#overview">Overview</a>
+<a href="#context">EcoCAR Context</a>
+<a href="#role">My Role</a>
+<a href="#problem">Integration Challenge</a>
+<a href="#approach">Engineering Approach</a>
+<a href="#tools">Tools & Learning</a>
+<a href="#takeaways">Key Takeaways</a>
+<a href="#skills">Skills</a>
+</aside>
 
-    <section class="section">
-      <h2>Top Skills Utilized</h2>
-      <div class="skills-grid">
-        <div class="skill-pill">Product Design</div>
-        <div class="skill-pill">Prototyping</div>
-        <div class="skill-pill">Additive Manufacturing</div>
-        <div class="skill-pill">DFM / Cost</div>
-      </div>
-    </section>
+<main>
 
-    <section class="section">
-      <h2>Gallery</h2>
-      <div class="media"><img src="../assets/clearscope-1.jpg" alt="CAD render or prototype photo" /></div>
-      <div class="media" style="margin-top:14px;"><img src="../assets/clearscope-2.jpg" alt="Testing setup or design detail" /></div>
-    </section>
+<section id="overview" class="section reveal">
+<h2>Overview</h2>
 
-    <section class="section">
-      <h2>Other Projects</h2>
-      <div class="other-grid">
-        <a class="other-card" href="battery.html">
-          <img src="../assets/battery-thumb.jpg" alt="Battery project thumbnail" />
-          <div class="pad">
-            <p class="title">Battery Defect Detection</p>
-            <p class="meta">Python · X-ray analysis · Control system</p>
-          </div>
-        </a>
+<p class="small">
+EcoCAR is a multi-year collegiate engineering competition sponsored by General Motors that challenges students to
+redesign and optimize advanced vehicle systems using industry-standard processes, tools, and mentorship.
+As part of the UT Austin EcoCAR team, I contributed to systems-level design and integration work on an electric Cadillac LYRIQ.
+</p>
 
-        <a class="other-card" href="infineon.html">
-          <img src="../assets/infineon-thumb.jpg" alt="Infineon thumbnail" />
-          <div class="pad">
-            <p class="title">Infineon Process DOE</p>
-            <p class="meta">DOE · Yield +10% · Efficiency +120%</p>
-          </div>
-        </a>
+</section>
 
-        <a class="other-card" href="ecocar.html">
-          <img src="../assets/ecocar-thumb.jpg" alt="EcoCar thumbnail" />
-          <div class="pad">
-            <p class="title">UT EcoCar Rear Redesign</p>
-            <p class="meta">SolidWorks/NX · Wiring reliability</p>
-          </div>
-        </a>
-      </div>
-    </section>
+<section id="context" class="section reveal">
+<h2>EcoCAR Project Context</h2>
 
-    <footer>
-      <div>LinkedIn: <a href="https://www.linkedin.com/in/sj320/" target="_blank" rel="noreferrer">linkedin.com/in/sj320</a></div>
-      <div>Email: <a href="mailto:Seowonj320@gmail.com">Seowonj320@gmail.com</a></div>
-      <div style="margin-top:8px;">© 2026 Seowon Jeong</div>
-    </footer>
+<div class="split">
 
-  </div>
+<div class="card">
+<strong>Competition Focus</strong>
+<ul class="bullets">
+<li>Advanced propulsion and EV performance</li>
+<li>Connected and automated vehicle (CAV) technologies</li>
+<li>Energy efficiency and system-level optimization</li>
+<li>Industry-aligned model-based design practices</li>
+</ul>
+</div>
+
+<div class="card">
+<strong>Why this matters</strong>
+<ul class="bullets">
+<li>Mirrors real OEM vehicle development workflows</li>
+<li>Uses production-representative vehicle platforms</li>
+<li>Emphasizes integration, not just component design</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<section id="role" class="section reveal">
+<h2>My Role — Systems Design & Integration</h2>
+
+<p class="small">
+I worked on the Systems Design and Integration team, where the focus is ensuring that electrical, mechanical,
+and packaging constraints are resolved coherently across the vehicle.
+My contribution centered on CAD-based modeling to identify and resolve wiring and integration challenges within the vehicle architecture.
+</p>
+
+<ul class="bullets">
+<li>Supported system-level CAD modeling of vehicle components</li>
+<li>Focused on wiring routing, packaging constraints, and physical interference</li>
+<li>Worked within an existing OEM vehicle architecture rather than a clean-sheet design</li>
+</ul>
+
+</section>
+
+<section id="problem" class="section reveal">
+<h2>Integration Challenge: Wiring & Packaging</h2>
+
+<div class="split">
+
+<div class="card">
+<strong>The challenge</strong>
+<ul class="bullets">
+<li>EV platforms contain dense wiring harnesses and subsystems</li>
+<li>Limited packaging space increases risk of interference</li>
+<li>Changes to one subsystem affect many others</li>
+</ul>
+</div>
+
+<div class="card">
+<strong>Why CAD matters here</strong>
+<ul class="bullets">
+<li>Visualizing routing early prevents costly rework</li>
+<li>Ensures maintainability and serviceability</li>
+<li>Supports cross-team communication (mechanical, electrical, controls)</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<section id="approach" class="section reveal">
+<h2>Engineering Approach</h2>
+
+<ul class="bullets">
+<li>Used Siemens NX to model vehicle components and wiring paths</li>
+<li>Evaluated physical clearances and routing feasibility</li>
+<li>Flagged potential integration issues early in the design phase</li>
+<li>Iterated designs based on system-level constraints and feedback</li>
+</ul>
+
+<p class="small">
+Even within a short timeframe, this work reflected real automotive engineering practice:
+designing within constraints, validating fit early, and communicating issues clearly to the team.
+</p>
+
+</section>
+
+<section id="tools" class="section reveal">
+<h2>Tools & Learning</h2>
+
+<div class="split">
+
+<div class="card">
+<strong>Technical tools</strong>
+<ul class="bullets">
+<li>Siemens NX for vehicle-level CAD</li>
+<li>Exposure to OEM-style CAD data organization</li>
+<li>Basic understanding of EV subsystem layout</li>
+</ul>
+</div>
+
+<div class="card">
+<strong>What I learned</strong>
+<ul class="bullets">
+<li>How complex real vehicle integration is compared to classroom projects</li>
+<li>Importance of wiring, routing, and packaging decisions</li>
+<li>How systems teams interface with design, controls, and validation teams</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<section id="takeaways" class="section reveal">
+<h2>Key Takeaways</h2>
+
+<ul class="bullets">
+<li>Vehicle performance depends heavily on integration quality, not just component specs</li>
+<li>CAD is a communication tool as much as a design tool</li>
+<li>Early systems thinking prevents downstream manufacturing and service issues</li>
+<li>Short projects can still provide meaningful industry-relevant experience</li>
+</ul>
+
+</section>
+
+<section id="skills" class="section reveal">
+<h2>Skills Demonstrated</h2>
+
+<div class="skills-grid">
+<div class="skill-pill">Vehicle Systems Thinking</div>
+<div class="skill-pill">Electrical & Mechanical Integration</div>
+<div class="skill-pill">Siemens NX CAD</div>
+<div class="skill-pill">Wiring & Packaging Awareness</div>
+<div class="skill-pill">Cross-Team Collaboration</div>
+<div class="skill-pill">EV Architecture Familiarity</div>
+</div>
+
+</section>
+
+</main>
+</div>
+
+<footer>
+<div>© 2026 Seowon Jeong</div>
+</footer>
+
+</div>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const revealOnScroll = () => {
+const h = window.innerHeight;
+reveals.forEach(el=>{
+if(el.getBoundingClientRect().top < h-120){ el.classList.add('active'); }
+});
+};
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+</script>
+
 </body>
 </html>
