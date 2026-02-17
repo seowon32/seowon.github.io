@@ -366,11 +366,13 @@ footer{
 
 .project-card img{
   width: 100%;
-  height: 190px;
+  aspect-ratio: 4 / 3;   /* better for hardware shots */
   object-fit: cover;
   display: block;
   border-bottom: 1px solid var(--line);
 }
+
+
 
 .project-card .pad{
   padding: 12px 12px 14px;
